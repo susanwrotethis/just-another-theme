@@ -1,0 +1,247 @@
+/**
+ * CSS for Denim Blue color scheme presets.
+ *
+ * @package just-another-theme
+ */
+
+body,
+.site-top-wrapper,
+.site-footer {
+	background-color: #282a33; 
+}
+
+.site-top-wrapper {
+	border-bottom: 4px solid #9e6f41;
+}
+
+a {
+	color: #025e5a; 
+}
+
+a:hover, 
+a:focus, 
+a:active {
+	color: #69390b;
+}
+
+.gobutton,
+.gobutton:visited,
+.page-links a,
+.page-links a:visited,
+.post-navigation a,
+.post-navigation a:visited,
+.posts-navigation a,
+.posts-navigation a:visited,
+.reply a,
+.reply a:visited, 
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #3c4557;
+}
+
+.gobutton:hover,
+.gobutton:focus,
+.gobutton:active,
+.page-links a:hover,
+.page-links a:focus,
+.page-links a:active,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.post-navigation a:active,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:active,
+.reply a:hover,
+.reply a:focus,
+.reply a:active,
+button:hover,
+button:active, 
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	background-color: #855729; 
+}
+
+.main-navigation-content,
+.main-navigation ul {
+	background-color: #282a33; 
+}
+
+.main-navigation-content {
+	border-bottom: 4px solid #9e6f41;
+}
+
+.main-navigation ul ul > li a:hover {
+	background-color: #1e202b;
+}
+
+/* Adjust for mobile screen sizes */
+@media screen and (max-width: 37.5em) {
+	.main-navigation a:hover {
+		background-color: #1e202b; 
+	}
+	
+	.menu-toggle:hover,
+	.menu-toggle:focus,
+	.menu-toggle:active {
+		background-color: #1e202b; 
+	}
+}
+
+blockquote,
+.main-navigation-content {
+	border-color: #9e6f41; 
+} 
+
+.main-navigation-content,
+.site-footer {
+	border-top: 4px solid #9e6f41;
+}
+
+h2,
+.sidebar-primary .widget-title,
+.sidebar-bottom .widget-title,
+.blog .entry-title,
+.archive .entry-title,
+.search-results .entry-title {
+	color: #3a4660;
+}
+
+h3:before {
+	color: #9e6f41; 
+}
+
+h4,
+.em-color {
+	color: #69390b;
+}
+
+hr {
+	background-color: #d6cfc7;
+}
+
+.sidebar-primary,
+.widgets-bottom {
+	border-color: #d6cfc7;
+}
+
+.blog article,
+.archive article, 
+.search-results article,
+.blog article:first-of-type,
+.archive article:first-of-type,
+.search-results article:first-of-type,
+.single .entry-meta,
+.single .entry-footer {
+	border-color: #ccc5be;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea, 
+select {
+	border-color: #bfb9b2;
+}
+
+.comment-list .children {
+	border-color: #ab9e90;
+}
+
+.site-footer a,
+.site-footer a:visited {
+	color: #ffcc99; 
+}
+
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active {
+	color: #ccd8f0; 
+}
+
+.site-footer input[type="text"],
+.site-footer input[type="email"],
+.site-footer input[type="url"],
+.site-footer input[type="password"],
+.site-footer input[type="search"],
+.site-footer input[type="number"],
+.site-footer input[type="tel"],
+.site-footer input[type="range"],
+.site-footer input[type="date"],
+.site-footer input[type="month"],
+.site-footer input[type="week"],
+.site-footer input[type="time"],
+.site-footer input[type="datetime"],
+.site-footer input[type="datetime-local"],
+.site-footer input[type="color"],
+.site-footer textarea, 
+.site-footer select {
+	background-color: #323440; 
+	border-color: #1e202b;
+}
+
+.site-footer .gobutton,
+.site-footer .gobutton:visited, 
+.site-footer button,
+.site-footer input[type="button"],
+.site-footer input[type="reset"],
+.site-footer input[type="submit"] {
+	background-color: #6b4f39;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.site-footer .gobutton:hover,
+.site-footer .gobutton:focus,
+.site-footer .gobutton:active,
+.site-footer button:hover,
+.site-footer button:active, 
+.site-footer button:focus,
+.site-footer input[type="button"]:hover,
+.site-footer input[type="button"]:active,
+.site-footer input[type="button"]:focus,
+.site-footer input[type="reset"]:hover,
+.site-footer input[type="reset"]:active,
+.site-footer input[type="reset"]:focus,
+.site-footer input[type="submit"]:hover,
+.site-footer input[type="submit"]:active,
+.site-footer input[type="submit"]:focus {
+	background-color: #3c4557;
+}
+
+.widgets-footer .widget {
+	margin-bottom: 0;
+}
+
+.widgets-footer .widget-title {
+	background-color: #1e202b; 
+	border: 1px dotted #9e6f41; 
+	padding: 10px 15px;
+}
+.widgets-footer .widget > p,
+.widgets-footer .widget > img,
+.widgets-footer .widget > div,
+.widgets-footer .widget > table,
+.widgets-footer .widget > form {
+	padding-right: 4px;
+}

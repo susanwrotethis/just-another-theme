@@ -1,0 +1,206 @@
+/**
+ * CSS for Deep Red color scheme presets.
+ *
+ * @package just-another-theme
+ */
+
+body,
+.site-top-wrapper {
+	background-color: #6b1515; 
+}
+
+.site-footer { 
+	background: #400b0b;
+	background: -moz-linear-gradient(top, #6b1515 0%, #400b0b 100%);
+	background: -webkit-linear-gradient(top, #6b1515 0%,#400b0b 100%);
+	background: linear-gradient(to bottom, #6b1515 0%,#400b0b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b1515', endColorstr='#400b0b',GradientType=0 );
+}
+
+a { 
+	color: #3c64ac; 
+}
+
+a:hover, 
+a:focus, 
+a:active {
+	color: #00603a; 
+}
+
+.gobutton,
+.gobutton:visited,
+.page-links a,
+.page-links a:visited,
+.post-navigation a,
+.post-navigation a:visited,
+.posts-navigation a,
+.posts-navigation a:visited,
+.reply a,
+.reply a:visited, 
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #57423f; 
+}
+
+.gobutton:hover,
+.gobutton:focus,
+.gobutton:active,
+.page-links a:hover,
+.page-links a:focus,
+.page-links a:active,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.post-navigation a:active,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:active,
+.reply a:hover,
+.reply a:focus,
+.reply a:active,
+button:hover,
+button:active, 
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	background-color: #2b3b57; 
+}
+
+.main-navigation-content,
+.main-navigation ul { 
+	background-color: #6b1515; 
+}
+
+.main-navigation ul ul > li a:hover {
+	background-color: #3d0c0c;
+}
+
+/* Adjust for mobile screen sizes */
+@media screen and (max-width: 37.5em) {
+	.main-navigation a:hover {
+		background-color: #3d0c0c;
+	}
+	
+	.menu-toggle:hover,
+	.menu-toggle:focus,
+	.menu-toggle:active {
+		background-color: #3d0c0c;
+	}
+}
+
+blockquote { 
+	border-color: #6b1515;
+} 
+
+.main-navigation-content {
+	border: none;
+}
+ 
+h2,
+.sidebar-primary .widget-title,
+.sidebar-bottom .widget-title,
+.blog .entry-title,
+.archive .entry-title,
+.search-results .entry-title { 
+	color: #57423f; 
+}
+
+h3:before { 
+	color: #6b1515; 
+}
+
+h4,
+.em-color { 
+	color: #2b3b57; 
+}
+
+.site-footer a,
+.site-footer a:visited { 
+	color: #ffd9d4; 
+}
+
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active { 
+	color: #b2cdff; 
+}
+
+.site-footer input[type="text"],
+.site-footer input[type="email"],
+.site-footer input[type="url"],
+.site-footer input[type="password"],
+.site-footer input[type="search"],
+.site-footer input[type="number"],
+.site-footer input[type="tel"],
+.site-footer input[type="range"],
+.site-footer input[type="date"],
+.site-footer input[type="month"],
+.site-footer input[type="week"],
+.site-footer input[type="time"],
+.site-footer input[type="datetime"],
+.site-footer input[type="datetime-local"],
+.site-footer input[type="color"],
+.site-footer textarea, 
+.site-footer select { 
+	background-color: #680e0e;
+	border-color: #490c0c; 
+}
+
+.site-footer .gobutton,
+.site-footer .gobutton:visited, 
+.site-footer button,
+.site-footer input[type="button"],
+.site-footer input[type="reset"],
+.site-footer input[type="submit"] {
+	background-color: #320c0c; 
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.site-footer .gobutton:hover,
+.site-footer .gobutton:focus,
+.site-footer .gobutton:active,
+.site-footer button:hover,
+.site-footer button:active, 
+.site-footer button:focus,
+.site-footer input[type="button"]:hover,
+.site-footer input[type="button"]:active,
+.site-footer input[type="button"]:focus,
+.site-footer input[type="reset"]:hover,
+.site-footer input[type="reset"]:active,
+.site-footer input[type="reset"]:focus,
+.site-footer input[type="submit"]:hover,
+.site-footer input[type="submit"]:active,
+.site-footer input[type="submit"]:focus {
+	background-color: #332929;
+}
+
+.widgets-footer .widget {
+	background-color: rgba(0,0,0,0.07); 
+	border: 1px dotted #3d0c0c;
+	margin-bottom: 1rem;
+	padding: 0 0 15px 0;
+}
+
+.widgets-footer .widget-title { 
+	background-color: #3d0c0c; 
+	border: none;
+	border-bottom: 1px solid #bfa6a2;
+	color: #cab2b2;
+}
+
+.widgets-footer .widget > p,
+.widgets-footer .widget > img,
+.widgets-footer .widget > form,
+.widgets-footer .widget > table,
+.widgets-footer .widget > div { 
+	padding-right: 15px; 
+	padding-left: 15px;
+}

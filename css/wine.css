@@ -1,0 +1,190 @@
+/**
+ * CSS for Wine color scheme presets.
+ *
+ * @package just-another-theme
+ */
+
+body,
+.site-top-wrapper,
+.site-footer {
+	background-color: #32111e; 
+}
+
+a {
+	color: #2d3480; 
+}
+
+a:hover, 
+a:focus, 
+a:active {
+	color: #780e19; 
+}
+
+.gobutton,
+.gobutton:visited,
+.page-links a,
+.page-links a:visited,
+.post-navigation a,
+.post-navigation a:visited,
+.posts-navigation a,
+.posts-navigation a:visited,
+.reply a,
+.reply a:visited, 
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #3a3d59; 
+}
+
+.gobutton:hover,
+.gobutton:focus,
+.gobutton:active,
+.page-links a:hover,
+.page-links a:focus,
+.page-links a:active,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.post-navigation a:active,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:active,
+.reply a:hover,
+.reply a:focus,
+.reply a:active,
+button:hover,
+button:active, 
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	background-color: #423f3a; 
+}
+
+.main-navigation-content,
+.main-navigation ul {
+	background-color: #32111e; 
+}
+
+.main-navigation ul ul > li a:hover {
+	background-color: #2b111b;
+}
+
+/* Adjust for mobile screen sizes */
+@media screen and (max-width: 37.5em) {
+	.main-navigation a:hover {
+		background-color: #2b111b;
+	}
+	
+	.menu-toggle:hover,
+	.menu-toggle:focus,
+	.menu-toggle:active {
+		background-color: #2b111b;
+	}
+}
+
+blockquote,
+.main-navigation-content {
+	border-color: #9c9384; 
+} 
+
+h2,
+.sidebar-primary .widget-title,
+.sidebar-bottom .widget-title,
+.blog .entry-title,
+.archive .entry-title,
+.search-results .entry-title {
+	color: #4a3139;
+}
+
+h3:before {
+	color: #9c9384; 
+}
+
+h4,
+.em-color {
+	color: #662f34;
+}
+
+.site-footer a,
+.site-footer a:visited {
+	color: #ffeccc;
+}
+
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active {
+	color: #d1d5ff;
+}
+
+.site-footer input[type="text"],
+.site-footer input[type="email"],
+.site-footer input[type="url"],
+.site-footer input[type="password"],
+.site-footer input[type="search"],
+.site-footer input[type="number"],
+.site-footer input[type="tel"],
+.site-footer input[type="range"],
+.site-footer input[type="date"],
+.site-footer input[type="month"],
+.site-footer input[type="week"],
+.site-footer input[type="time"],
+.site-footer input[type="datetime"],
+.site-footer input[type="datetime-local"],
+.site-footer input[type="color"],
+.site-footer textarea, 
+.site-footer select {
+	background-color: #401c2a; 
+	border-color: #2b111b;
+}
+
+.site-footer .gobutton,
+.site-footer .gobutton:visited, 
+.site-footer button,
+.site-footer input[type="button"],
+.site-footer input[type="reset"],
+.site-footer input[type="submit"] {
+	background-color: #403f3d; 
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.site-footer .gobutton:hover,
+.site-footer .gobutton:focus,
+.site-footer .gobutton:active,
+.site-footer button:hover,
+.site-footer button:active, 
+.site-footer button:focus,
+.site-footer input[type="button"]:hover,
+.site-footer input[type="button"]:active,
+.site-footer input[type="button"]:focus,
+.site-footer input[type="reset"]:hover,
+.site-footer input[type="reset"]:active,
+.site-footer input[type="reset"]:focus,
+.site-footer input[type="submit"]:hover,
+.site-footer input[type="submit"]:active,
+.site-footer input[type="submit"]:focus {
+	background-color: #3a3d59; 
+}
+
+.widgets-footer .widget {
+	margin-bottom: 0; 
+}
+
+.widgets-footer .widget-title {
+	background-color: #2b111b; 
+	border: 1px dotted #9c9384; 
+	padding: 10px 15px;
+}
+.widgets-footer .widget > p,
+.widgets-footer .widget > img,
+.widgets-footer .widget > div,
+.widgets-footer .widget > table,
+.widgets-footer .widget > form {
+	padding-right: 4px; 
+}
