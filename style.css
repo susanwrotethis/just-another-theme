@@ -5,7 +5,7 @@ GitHub Plugin URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a lightweight theme good for small personal, business and organizational sites. It is optimized for the DIY site owner with basic CSS skills but who should not be left unattended with a color picker and infinite font choices. Made from Underscores.
-Version: 1.1
+Version: 1.1.1
 License: GPL v2 or later
 Text Domain: swt-jat
 Tags: custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns
@@ -839,7 +839,7 @@ textarea {
 .main-navigation-content:after,
 .site-top-content:after,
 .sidebar-primary:after,
-.sidebar-bottom:before,
+.widgets-bottom:before,
 .content-area:after {
  	content: '';
 	display: block;
@@ -855,7 +855,7 @@ textarea {
 .main-navigation-content:after,
 .site-top-content:after,
 .sidebar-primary:after,
-.sidebar-bottom:before,
+.widgets-bottom:before,
 .content-area:after {
 	clear: both;
 }
@@ -1287,7 +1287,7 @@ object {
 	margin: 12px 0;
 }
 
-.sidebar-bottom .widget-title {
+.widgets-bottom .widget-title {
 	font-size: 1.4rem;
 }
 
