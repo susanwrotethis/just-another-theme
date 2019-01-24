@@ -48,3 +48,9 @@ This theme would not be as good without the talented people whose work went into
 ### 1.0.0
 
 * New release
+
+### 1.1
+
+* Update CSS setting height of header when there is no logo.
+* Delete unused instructions file from lang directory
+* Add index.html files to prevent directory browsing
