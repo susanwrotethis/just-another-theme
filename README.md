@@ -54,3 +54,8 @@ This theme would not be as good without the talented people whose work went into
 * Update CSS setting height of header when there is no logo.
 * Delete unused instructions file from lang directory
 * Add index.html files to prevent directory browsing
+
+### 1.1.1
+
+* Changed references to .sidebar-bottom class to .widgets-bottom in style.css for consistency.
+* Fixed a hex number in kiddie-time.css
