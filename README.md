@@ -59,3 +59,16 @@ This theme would not be as good without the talented people whose work went into
 
 * Changed references to .sidebar-bottom class to .widgets-bottom in style.css for consistency.
 * Fixed a hex number in kiddie-time.css
+
+### 1.2
+
+Updated style.css to add multiple improvements:
+
+* Added flexbox rules for backwards compatibility.
+* Changed the hamburger menu icon for mobile display of primary navigation.
+* Adjusted header resizing rules for mobile.
+* Adjusted right and left padding for screens narrower than 1040 pixels.
+* Added the alignfull image style for Gutenberg compatibility.
+* Changed a float clear on .widgets-bottom to .bottom-content.
+* Tweaked the right and left padding rules for .widgets-bottom widgets.
+* Consolidated media queries.
