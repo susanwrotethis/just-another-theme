@@ -5,7 +5,7 @@ GitHub Plugin URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a lightweight theme good for small personal, business and organizational sites. It is optimized for the DIY site owner with basic CSS skills but who should not be left unattended with a color picker and infinite font choices. Made from Underscores.
-Version: 1.2
+Version: 1.2.1
 License: GPL v2 or later
 Text Domain: swt-jat
 Tags: custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns
@@ -146,7 +146,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both; font-family: 'Times New Roman', Times, serif; font-weight: bold;
-	margin: 0 0 12px 0;}
+	margin: 0 0 15px 0;}
 
 h1 {
 	margin: 0;}
@@ -164,7 +164,7 @@ h4 {
 	font-size: 1.2rem;}
 
 p {
-	margin: 0 0 12px 0;}
+	margin: 0 0 13px 0;}
 
 dfn, cite, em, i {
 	font-style: italic;}
@@ -174,7 +174,7 @@ blockquote {
 	margin: 1rem 30px 1rem 67px; padding-left: 30px;}
 
 address {
-	margin: 0 0 12px 0;}
+	margin: 0 0 13px 0;}
 
 pre {
 	background: #eee;
@@ -229,7 +229,7 @@ hr {
 	background-color: #ddd; border: 0; height: 1px; margin-bottom: 1.5em;}
 
 ul, ol {
-	margin: 0 0 12px 0;}
+	margin: 0 0 13px 0;}
 
 ul {
 	list-style: disc;}
@@ -778,9 +778,9 @@ object {
 	margin: 0 0 1rem;
 }
 
-.widget p:last-of-type,
-.widget > form {
-	margin-bottom: 0;
+.widget table {
+	max-width: 100%;
+	width: 100%;
 }
 
 .widget ul, .widget ol {
@@ -826,6 +826,12 @@ object {
 .widgets-body-style a:focus,
 .widgets-body-style a:active {
 	text-decoration: underline;}
+
+.widgets-body-style .gobutton,
+.widgets-body-style .gobutton:visited {
+	color: #fff;
+	text-decoration: none;
+}
 
 /* PRIMARY SIDEBAR STYLES BEGIN HERE *********************************/
 .sidebar-primary {
@@ -913,7 +919,7 @@ object {
 	border-top: 2px solid #ddd; padding: 10px 0 0 0;}
 
 .widgets-bottom .widget {
-	margin: 12px 0;}
+	margin: 13px 0;}
 
 .widgets-bottom .widget-title {
 	font-size: 1.4rem;}
@@ -1049,7 +1055,7 @@ object {
 
 /* STYLES FOR ALL PAGES BEGIN HERE ***********************************/
 .page-title {
-	font-size: 2.2rem; text-transform: uppercase; width: auto;}
+	font-size: 2.2rem; margin-bottom: .7rem; text-transform: uppercase; width: auto;}
 
 .page-content,
 .entry-content,
@@ -1141,7 +1147,7 @@ object {
 .blog .post-thumbnail,
 .archive .post-thumbnail {
 	clear: none; display: block; float: left; height: auto; 
-	margin: 0 25px 12px 0; max-width: 33.33%; width: 33.33%;}
+	margin: 0 25px 13px 0; max-width: 33.33%; width: 33.33%;}
 
 .blog.with-sidebar .post-thumbnail,
 .archive.with-sidebar .post-thumbnail {
@@ -1149,7 +1155,7 @@ object {
 
 /* Article meta and footer */
 .entry-meta {
-	margin-bottom: 12px;}
+	margin-bottom: 13px;}
 
 .not-page .entry-footer {
 	display: -ms-flexbox;
@@ -1369,5 +1375,14 @@ ol.comment-list {
 .smaller-text {
 	font-size: .82rem;}
 
+.widebutton {max-width: 100%; text-align: center; width: 100%;}
+
+.deck {
+	font-size: 1.5rem; font-weight: bold;}
+
+.subdeck {
+	font-size: 1.25rem; font-weight: bold;
+}
+
 hr.thick {
-	height: 4px; margin: 12px 0;}
+	height: 4px; margin: 13px 0;}
