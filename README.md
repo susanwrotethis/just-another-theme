@@ -72,3 +72,7 @@ Updated style.css to add multiple improvements:
 * Changed a float clear on .widgets-bottom to .bottom-content.
 * Tweaked the right and left padding rules for .widgets-bottom widgets.
 * Consolidated media queries.
+
+### 1.2.1
+
+Added some useful text styles and set the width of tables in widgets.
