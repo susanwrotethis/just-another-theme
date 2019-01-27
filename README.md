@@ -76,3 +76,7 @@ Updated style.css to add multiple improvements:
 ### 1.2.1
 
 Added some useful text styles and set the width of tables in widgets.
+
+### 1.2.2
+
+Fixes Github URI data in style.css.
