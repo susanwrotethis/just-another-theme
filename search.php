@@ -8,8 +8,9 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area content-area-wide">
+	<div id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
+			<?php do_action( 'swt-jat-before-main', 'search' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -36,7 +37,7 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation( array( 
+			the_posts_navigation( array( // Custom setup for search
 				'prev_text' => esc_html__( 'More Results', 'swt-jat' ), 
 				'next_text' => esc_html__( 'Previous Results', 'swt-jat' ) ,
 			) );
@@ -48,8 +49,9 @@ get_header();
 		endif;
 			
 		?>
-		</main><!-- #main -->
-	</section><!-- #primary -->
+			<?php do_action( 'swt-jat-after-main', 'search' ); ?>
+		</main><!-- #main .site-main -->
+	</div><!-- #primary .content-area -->
 
 	<?php if ( get_theme_mod( 'swt_jat_cols_search' ) ) : 
 
@@ -58,5 +60,6 @@ get_header();
 	endif; ?>
 
 	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		<?php do_action( 'swt-jat-pre-footer', 'search' ); ?>
 
 <?php get_footer();

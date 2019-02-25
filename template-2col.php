@@ -10,6 +10,7 @@ get_header();
 
 	<div id="primary" class="content-area content-area-cols">
 		<main id="main" class="site-main">
+			<?php do_action( 'swt-jat-before-main', 'widepage' ); ?>
 
 		<?php
 		while ( have_posts() ) :
@@ -25,11 +26,13 @@ get_header();
 		endwhile; // End of the loop.
 			
 		?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<?php do_action( 'swt-jat-after-main', 'widepage' ); ?>
+		</main><!-- #main .site-main -->
+	</div><!-- #primary .content-area -->
 
 	<?php get_sidebar( 'primary' ); ?>
 
 	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		<?php do_action( 'swt-jat-pre-footer', 'widepage' ); ?>
 
 <?php get_footer();

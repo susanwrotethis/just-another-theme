@@ -8,8 +8,9 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area content-area-wide">
+	<div id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
+			<?php do_action( 'swt-jat-before-main', 'archive' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -43,9 +44,9 @@ get_header();
 		endif;
 			
 		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<?php do_action( 'swt-jat-after-main', 'archive' ); ?>
+		</main><!-- #main .site-main -->
+	</div><!-- #primary .content-area -->
 
 	<?php if ( get_theme_mod( 'swt_jat_cols_archive' ) ) : 
 
@@ -54,5 +55,6 @@ get_header();
 	endif; ?>
 
 	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		<?php do_action( 'swt-jat-pre-footer', 'archive' ); ?>
 
 <?php get_footer();

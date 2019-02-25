@@ -8,14 +8,15 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area content-area-wide">
+	<div id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
+			<?php do_action( 'swt-jat-before-main', 'index' ); ?>
 
 		<?php
 		if ( have_posts() ) :
 
 				?>
-				<header>
+				<header class="page-header">
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
 				<?php
@@ -42,9 +43,9 @@ get_header();
 		endif;
 			
 		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<?php do_action( 'swt-jat-after-main', 'index' ); ?>
+		</main><!-- #main .site-main -->
+	</div><!-- #primary .content-area -->
 
 	<?php if ( get_theme_mod( 'swt_jat_cols_blog' ) ) : 
 
@@ -53,5 +54,6 @@ get_header();
 	endif; ?>
 
 	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		<?php do_action( 'swt-jat-pre-footer', 'index' ); ?>
 
 <?php get_footer();
