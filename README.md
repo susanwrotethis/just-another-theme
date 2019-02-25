@@ -80,3 +80,12 @@ Added some useful text styles and set the width of tables in widgets.
 ### 1.2.2
 
 Fixes Github URI data in style.css.
+
+### 1.3
+
+* Fixed an unclosed paragraph tag in header.php.
+* Changed content class name in page files and style.css for clarity.
+* Removed unused CSS from all CSS files.
+* Formatted code and comments in template-tags.php.
+* Added action hooks to header.php, footer.php and page files.
+* Updated the translation template.
