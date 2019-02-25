@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php swt_jat_post_thumbnail(); ?>
+	<?php swt_jat_post_thumbnail( 'full' ); ?>
 
 	<div class="entry-content">
 		<?php

@@ -26,10 +26,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php swt_jat_post_thumbnail(); ?>
+	<?php swt_jat_post_thumbnail( 'full' ); ?>
 	
 	<?php if ( 'excerpt' == get_theme_mod( 'swt_jat_index_content', 'excerpt' ) ): ?>
-
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->

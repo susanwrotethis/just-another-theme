@@ -34,14 +34,14 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'swt-jat' ); ?></p>
+			<p class="no-search-results"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'swt-jat' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'swt-jat' ); ?></p>
+			<p class="no-post-found"><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'swt-jat' ); ?></p>
 			<?php
 			get_search_form();
 
