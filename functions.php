@@ -4,6 +4,14 @@
  *
  * @package just-another-theme
  */
+ 
+// LANGUAGE SUPPORT SETUP BEGINS HERE ////////////////////////////////////////////////////
+// Load plugin textdomain
+function swt_jat_load_textdomain()
+{
+	load_plugin_textdomain( 'swt-jat', false, dirname( plugin_basename( __FILE__ ) ).'/lang/' );
+}
+add_action( 'init', 'swt_jat_load_textdomain' );
 
 // THEME SETUP BEGINS HERE ///////////////////////////////////////////////////////////////
 function swt_jat_setup() 
@@ -173,7 +181,7 @@ function swt_jat_styles()
 	if ( 33 != $sidebar_width && 19 < $sidebar_width && 50 > $sidebar_width ) {
 		$main = 100-$sidebar_width;
 		
-		$cols_width_css = ".with-sidebar .content-area-wide,.content-area-cols {max-width: $main%; width: $main%;}
+		$cols_width_css = ".with-sidebar .content-area-default,.content-area-cols {max-width: $main%; width: $main%;}
 		.sidebar-primary {max-width: $sidebar_width%; width: $sidebar_width%;}";
 		
 		// Add inline style for sidebar width
