@@ -3,133 +3,140 @@
  *
  * @package just-another-theme
  */
+ 
+ html {
+	font-size: 18px; line-height: 1.15; -webkit-text-size-adjust: 100%;}
+	
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #333; font-family: Arial, Helvetica, sans-serif; font-size: 1rem;
+	line-height: 1.5;}
 
 h2 {
- font-size: 1.8rem;
-}
+	font-size: 1.8rem;}
 
 h3 {
-	font-size: 1.5rem;
-}
+	font-size: 1.5rem;}
+	
 h3:before {
-	content: '\2605'; font-size: 1.4rem; padding-right: 10px;
-}
+	color: #333; content: '\2605'; font-size: 1.4rem; padding-right: 10px;}
 
 h4 {
-	font-size: 1.2rem;
-}
+	font-size: 1.2rem;}
 
 p {
- margin: 0 0 12px 0;
-}
+	margin: 0 0 13px 0;}
+	
+dfn, cite, em, i {
+	font-style: italic;}
 
 blockquote {
- margin: 1rem 30px 1rem 67px;
- border-left: 7px solid #666;
- font-style: italic;
- padding-left: 30px;
-}
+	border-left: 7px solid #666; font-style: italic;
+	margin: 1rem 25px 1rem 57px; padding-left: 25px;}
 
 address {
- margin: 0 0 12px 0;
-}
-
-dfn, cite, em, i {
-	font-style: italic;
-}
+	margin: 0 0 13px 0;}
 
 pre {
- background: #eee;
- font-family: "Courier 10 Pitch", Courier, monospace;
- font-size: 0.9375rem;
- line-height: 1.6;
- margin-bottom: 1.6em;
- max-width: 100%;
- overflow: auto;
- padding: 1.6em;
-}
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace; font-size: 0.9375rem;
+	line-height: 1.6; margin-bottom: 
 
 sub,
 sup {
-	font-size: .75rem;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
+	font-size: .75rem; line-height: 0; position: relative; vertical-align: baseline;}
 
 sub {
-	bottom: -0.25em;
-}
+	bottom: -0.25em;}
 
 sup {
-	top: -0.5em;
-}
+	top: -0.5em;}
 
 code, kbd, tt, var {
- font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
- font-size: 0.9375rem;
-}
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 0.9375rem;}
 
 abbr, acronym {
- border-bottom: 1px dotted #666;
- cursor: help;
-}
+	border-bottom: 1px dotted #666; cursor: help;}
 
 mark, ins {
- background: #fff9c0;
- text-decoration: none;
-}
+	background: #fff9c0; text-decoration: none;}
+
+big {
+	font-size: 1.1rem;}
 
 hr {
- background-color: #ddd;
- border: 0;
- height: 1px;
- margin-bottom: 1.5em;
-}
+	background-color: #ddd; border: 0; height: 1px; margin-bottom: 1.5em;}
 
 ul, ol {
- margin: 0 0 12px 0;
-}
+	margin: 0 0 13px 0;}
 
 ul {
- list-style: disc;
-}
+	list-style: disc;}
 
 ol {
- list-style: decimal;
-}
+	list-style: decimal;}
 
 li > ul,
 li > ol {
- margin-bottom: 0;
- padding-left: 20px;
-}
+	margin-bottom: 0; padding-left: 20px;}
 
 dt {
- font-weight: bold;
-}
+	font-weight: bold;}
 
 dd {
- margin: 0 1.5em 1.5em;
-}
+	margin: 0 1.5em 1.5em;}
 
 img {
- height: auto;
- max-width: 100%;
-}
+	border-style: none; height: auto; max-width: 100%;}
 
 figure {
- margin: 1em 0;
-}
+	margin: 1em 0;}
 
 table {
- margin: 0 0 1.5em;
- width: 100%;
+	margin: 0 0 1.5em; width: 100%;}
+	
+a:hover, 
+a:focus, 
+a:active {
+	text-decoration: underline;}
+
+a:focus {
+	outline: thin dotted;}
+
+a:hover {
+	-webkit-transition: all 1s; transition: all 1s;}
+
+a:hover, 
+a:active {
+	outline: 0;}
+
+.em-color {
+	color: #000; font-weight: bold;}
+
+.em-size {
+	font-size: 1.15rem;} /* deprecated */
+
+.larger-text {
+	font-size: 1.15rem;}
+
+.smaller-text {
+	font-size: .82rem;}
+
+.widebutton {max-width: 100%; text-align: center; width: 100%;}
+
+.deck {
+	font-size: 1.5rem; font-weight: bold;}
+
+.subdeck {
+	font-size: 1.25rem; font-weight: bold;
 }
 
-.em-color {font-weight: bold;}
-.em-size {font-size: 1.15rem;}
-
-hr.thick {height: 4px; margin: 12px 0;}
+hr.thick {
+	height: 4px; margin: 13px 0;}
 
 body {background: #fff !important;} /* override skin css */
