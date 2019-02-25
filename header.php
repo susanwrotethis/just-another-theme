@@ -23,26 +23,28 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			$swt_jat_description = get_bloginfo( 'description', 'display' );
-			if ( $swt_jat_description || is_customize_preview() ) : ?>
 			<div class="site-top-wrapper">
 				<div class="site-top-content">
-				<p class="site-description"><?php echo $swt_jat_description; /* WPCS: xss ok. */ ?>
+				<?php
+				$swt_jat_description = get_bloginfo( 'description', 'display' );
+				if ( $swt_jat_description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $swt_jat_description; /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
 				<?php get_sidebar( 'header' ); ?>
-				</div>
-			</div>
-			<?php endif; ?>
+				</div><!-- .site-top-content -->
+			</div><!-- .site-top-wrapper -->
+			<?php do_action( 'swt-jat-top' ); ?>
 			
 			<div class="site-title-wrapper">
-			<?php  // Logo and title
+			<?php // Logo and title
 				$swt_jat_has_logo = swt_jat_custom_logo();
 				if ( is_front_page() && is_home() ) : 
 				?><h1 class="site-title <?php echo ( $swt_jat_has_logo ? 'has_logo' : 'no_logo '); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?><p class="site-title <?php echo ( $swt_jat_has_logo ? 'has_logo' : 'no_logo '); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php endif; ?>
-			</div>
+			</div><!-- .site-title-wrapper -->
 		</div><!-- .site-branding -->
+		<?php do_action( 'swt-jat-header' ); ?>
 
 		<nav id="site-navigation" class="main-navigation">
 			<div class="main-navigation-content">
@@ -53,10 +55,11 @@
 				'menu_id'        => 'primary-menu',
 			) );
 			?>
-			</div>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			</div><!-- .main-navigation-content -->
+		</nav><!-- .main-navigation -->
+	</header><!-- #masthead .site-header -->
 
 	<div id="content" class="site-content-wrapper">
 		<div class="site-content">
-		<?php get_sidebar( 'top' ); ?>
+			<?php do_action( 'swt-jat-pre-content' ); ?>
+			<?php get_sidebar( 'top' ); ?>
