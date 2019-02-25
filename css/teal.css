@@ -79,10 +79,7 @@ input[type="submit"]:focus {
 
 /* Adjust for mobile screen sizes */
 @media screen and (max-width: 37.5em) {
-	.main-navigation a:hover {
-		background-color: #1c343b;
-	}
-	
+	.main-navigation a:hover,
 	.menu-toggle:hover,
 	.menu-toggle:focus,
 	.menu-toggle:active {
@@ -195,7 +192,6 @@ select {
 .site-footer input[type="reset"],
 .site-footer input[type="submit"] {
 	background-color: #9f6123;
-	border: 1px solid rgba(0,0,0,0.1);
 }
 
 .site-footer .gobutton:hover,
@@ -216,19 +212,7 @@ select {
 	background-color: #192d33; 
 }
 
-.widgets-footer .widget {
-	padding: 0 0 15px 0;
-}
-
 .widgets-footer .widget-title {
-	background-color: #1c343b; 
+	background-color: #1c343b;
 	border-color: #cf7d2d;
-}
-
-.widgets-footer .widget > p,
-.widgets-footer .widget > img,
-.widgets-footer .widget > div,
-.widgets-footer .widget > table,
-.widgets-footer .widget > form {
-	padding-right: 4px; 
 }

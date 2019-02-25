@@ -3,12 +3,14 @@
  *
  * @package just-another-theme
  */
-
+ 
 a {
 	color: #00756a;
 }
 
-a:hover, a:focus, a:active {
+a:hover, 
+a:focus, 
+a:active {
 	color: #b56204;
 }
 
@@ -115,7 +117,6 @@ h4,
 .site-footer input[type="reset"],
 .site-footer input[type="submit"] {
 	background-color: #08706d;
-	border: 1px solid rgba(0,0,0,0.1);
 }
 
 .site-footer .gobutton:hover,
