@@ -4,7 +4,7 @@
  * @package just-another-theme
  */
  
- html {
+html {
 	font-size: 18px; line-height: 1.15; -webkit-text-size-adjust: 100%;}
 	
 body,
@@ -15,6 +15,9 @@ optgroup,
 textarea {
 	color: #333; font-family: Arial, Helvetica, sans-serif; font-size: 1rem;
 	line-height: 1.5;}
+	
+h1, h2, h3, h4, h5, h6 {
+	clear: both; font-weight: bold; margin: 0 0 15px 0;}
 
 h2 {
 	font-size: 1.8rem;}
@@ -98,7 +101,7 @@ figure {
 	margin: 1em 0;}
 
 table {
-	margin: 0 0 1.5em; width: 100%;}
+	margin: 0 0 13px 0; max-width: 100%; width: 100%;}
 	
 a:hover, 
 a:focus, 
