@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area content-area-default">
+	<section id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
 			<?php do_action( 'swt-jat-before-main', 'archive' ); ?>
 
@@ -46,7 +46,7 @@ get_header();
 		?>
 			<?php do_action( 'swt-jat-after-main', 'archive' ); ?>
 		</main><!-- #main .site-main -->
-	</div><!-- #primary .content-area -->
+	</section><!-- #primary .content-area -->
 
 	<?php if ( get_theme_mod( 'swt_jat_cols_archive' ) ) : 
 
