@@ -28,7 +28,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #148278;
+	background-color: #00756A;
 }
 
 .gobutton:hover,
@@ -66,15 +66,6 @@ input[type="submit"]:focus{
 	background-color: #242424;
 }
 
-/* Adjust for mobile screen sizes */
-@media screen and (max-width: 37.5em) {
-	.menu-toggle:hover,
-	.menu-toggle:focus,
-	.menu-toggle:active {
-		background-color: #1f1f1f;
-	}
-}
-
 blockquote,
 .main-navigation-content,
 .widgets-footer .widget-title {
@@ -99,40 +90,29 @@ h4,
 	color: #00756a;
 }
 
-.site-footer a,
-.site-footer a:visited {
-	color: #7fe3d9;
+.color-section .gobutton,
+.color-section .gobutton:visited,
+.color-section button,
+.color-section input[type="button"],
+.color-section input[type="reset"],
+.color-section input[type="submit"] {
+	background-color: #00756A;
 }
 
-.site-footer a:hover,
-.site-footer a:focus,
-.site-footer a:active {
-	color: #eeb16b;
-}
-
-.site-footer .gobutton,
-.site-footer .gobutton:visited,
-.site-footer button,
-.site-footer input[type="button"],
-.site-footer input[type="reset"],
-.site-footer input[type="submit"] {
-	background-color: #08706d;
-}
-
-.site-footer .gobutton:hover,
-.site-footer .gobutton:focus,
-.site-footer .gobutton:active,
-.site-footer button:hover,
-.site-footer button:active, 
-.site-footer button:focus,
-.site-footer input[type="button"]:hover,
-.site-footer input[type="button"]:active,
-.site-footer input[type="button"]:focus,
-.site-footer input[type="reset"]:hover,
-.site-footer input[type="reset"]:active,
-.site-footer input[type="reset"]:focus,
-.site-footer input[type="submit"]:hover,
-.site-footer input[type="submit"]:active,
-.site-footer input[type="submit"]:focus {
+.color-section .gobutton:hover,
+.color-section .gobutton:focus,
+.color-section .gobutton:active,
+.color-section button:hover,
+.color-section button:active, 
+.color-section button:focus,
+.color-section input[type="button"]:hover,
+.color-section input[type="button"]:active,
+.color-section input[type="button"]:focus,
+.color-section input[type="reset"]:hover,
+.color-section input[type="reset"]:active,
+.color-section input[type="reset"]:focus,
+.color-section input[type="submit"]:hover,
+.color-section input[type="submit"]:active,
+.color-section input[type="submit"]:focus {
 	background-color: #b56204;
 }

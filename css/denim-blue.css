@@ -5,13 +5,13 @@
  */
 
 body,
-.site-top-wrapper,
-.site-footer {
+.color-section,
+.color-section.menu ul {
 	background-color: #282a33; 
 }
 
 a {
-	color: #69390b;
+	color: #693e15;
 }
 
 a:hover, 
@@ -34,7 +34,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #805428; 
+	background-color: #693e15; 
 }
 
 .gobutton:hover,
@@ -67,29 +67,6 @@ input[type="submit"]:focus {
 	background-color: #455e2a;
 }
 
-.main-navigation-content,
-.main-navigation ul {
-	background-color: #282a33; 
-}
-
-.main-navigation-content {
-	border-color: #9e6f41;
-}
-
-.main-navigation ul ul > li a:hover {
-	background-color: #1e202b;
-}
-
-/* Adjust for mobile screen sizes */
-@media screen and (max-width: 37.5em) {
-	.main-navigation a:hover,
-	.menu-toggle:hover,
-	.menu-toggle:focus,
-	.menu-toggle:active {
-		background-color: #1e202b; 
-	}
-}
-
 blockquote,
 .main-navigation-content {
 	border-color: #9e6f41; 
@@ -110,7 +87,7 @@ h3:before {
 
 h4,
 .em-color {
-	color: #69390b;
+	color: #693e15;
 }
 
 hr {
@@ -157,66 +134,53 @@ select {
 	border-color: #ab9e90;
 }
 
-.site-footer a,
-.site-footer a:visited {
-	color: #ffcc99; 
+.color-section input[type="text"],
+.color-section input[type="email"],
+.color-section input[type="url"],
+.color-section input[type="password"],
+.color-section input[type="search"],
+.color-section input[type="number"],
+.color-section input[type="tel"],
+.color-section input[type="range"],
+.color-section input[type="date"],
+.color-section input[type="month"],
+.color-section input[type="week"],
+.color-section input[type="time"],
+.color-section input[type="datetime"],
+.color-section input[type="datetime-local"],
+.color-section input[type="color"],
+.color-section textarea, 
+.color-section select {
+	background-color: #323440;
 }
 
-.site-footer a:hover,
-.site-footer a:focus,
-.site-footer a:active {
-	color: #cadaB9;
+.color-section .gobutton,
+.color-section .gobutton:visited, 
+.color-section button,
+.color-section input[type="button"],
+.color-section input[type="reset"],
+.color-section input[type="submit"] {
+	background-color: #693e15;
 }
 
-.site-footer input[type="text"],
-.site-footer input[type="email"],
-.site-footer input[type="url"],
-.site-footer input[type="password"],
-.site-footer input[type="search"],
-.site-footer input[type="number"],
-.site-footer input[type="tel"],
-.site-footer input[type="range"],
-.site-footer input[type="date"],
-.site-footer input[type="month"],
-.site-footer input[type="week"],
-.site-footer input[type="time"],
-.site-footer input[type="datetime"],
-.site-footer input[type="datetime-local"],
-.site-footer input[type="color"],
-.site-footer textarea, 
-.site-footer select {
-	background-color: #323440; 
-	border-color: #1e202b;
-}
-
-.site-footer .gobutton,
-.site-footer .gobutton:visited, 
-.site-footer button,
-.site-footer input[type="button"],
-.site-footer input[type="reset"],
-.site-footer input[type="submit"] {
-	background-color: #6b4f39;
-}
-
-.site-footer .gobutton:hover,
-.site-footer .gobutton:focus,
-.site-footer .gobutton:active,
-.site-footer button:hover,
-.site-footer button:active, 
-.site-footer button:focus,
-.site-footer input[type="button"]:hover,
-.site-footer input[type="button"]:active,
-.site-footer input[type="button"]:focus,
-.site-footer input[type="reset"]:hover,
-.site-footer input[type="reset"]:active,
-.site-footer input[type="reset"]:focus,
-.site-footer input[type="submit"]:hover,
-.site-footer input[type="submit"]:active,
-.site-footer input[type="submit"]:focus {
+.color-section .gobutton:hover,
+.color-section .gobutton:focus,
+.color-section .gobutton:active,
+.color-section button:hover,
+.color-section button:active, 
+.color-section button:focus,
+.color-section input[type="button"]:hover,
+.color-section input[type="button"]:active,
+.color-section input[type="button"]:focus,
+.color-section input[type="reset"]:hover,
+.color-section input[type="reset"]:active,
+.color-section input[type="reset"]:focus,
+.color-section input[type="submit"]:hover,
+.color-section input[type="submit"]:active,
+.color-section input[type="submit"]:focus {
 	background-color: #455e2a;
 }
 
 .widgets-footer .widget-title {
-	background-color: #1e202b;
 	border-color: #9e6f41;
 }
