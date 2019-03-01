@@ -16,7 +16,7 @@ msgstr ""
 "X-Loco-Version: 2.2.0; wp-5.1"
 
 #. used between list items, there is a space after the comma
-#: inc/template-tags.php:68
+#: inc/content-functions.php:68
 msgid ", "
 msgstr ""
 
@@ -73,7 +73,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:57
+#: inc/content-functions.php:57
 msgid "Continue reading"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgid ""
 msgstr ""
 
 #. used between list items, there is a space after the comma
-#: inc/template-tags.php:75
+#: inc/content-functions.php:75
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
@@ -200,21 +200,21 @@ msgid "Please try the following:"
 msgstr ""
 
 #. %s: post author.
-#: inc/template-tags.php:35
+#: inc/content-functions.php:35
 #, php-format
 msgctxt "post author"
 msgid "Posted by %s "
 msgstr ""
 
 #. %s: post date.
-#: inc/template-tags.php:24
+#: inc/content-functions.php:24
 #, php-format
 msgctxt "post date"
 msgid "on %s"
 msgstr ""
 
 #. 1: list of categories.
-#: inc/template-tags.php:71
+#: inc/content-functions.php:71
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
@@ -271,7 +271,7 @@ msgid ""
 msgstr ""
 
 #. 1: list of tags.
-#: inc/template-tags.php:78
+#: inc/content-functions.php:78
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Two-Column Page"
 msgstr ""
 
-#: inc/template-tags.php:47
+#: inc/content-functions.php:47
 msgid "Untitled"
 msgstr ""
 
