@@ -16,7 +16,7 @@ function swt_jat_pingback_header()
 add_action( 'wp_head', 'swt_jat_pingback_header' );
 
 // BODY CUSTOMIZATION FUNCTIONS BEGIN HERE ///////////////////////////////////////////////
-// Add custom body classes
+// Add custom body classes.
 function swt_jat_body_classes( $classes ) 
 {
 	// Adds a class of hfeed to non-singular pages.
@@ -60,7 +60,7 @@ function swt_jat_body_classes( $classes )
 		$classes[] = 'basic-footer';
 	}
 	
-	if ( !is_home() ) {
+	if ( !is_front_page() ) {
 		$classes[] = 'not-home';
 	}
 	
@@ -77,7 +77,9 @@ add_filter( 'body_class', 'swt_jat_body_classes' );
 function swt_jat_custom_logo()
 {
 	// No logo set? On to the next thing.
-	if ( !$custom_logo_id = get_theme_mod( 'custom_logo', null ) ) return false;
+	if ( !$custom_logo_id = get_theme_mod( 'custom_logo', null ) ) {
+		return false;
+	}
 	
 	$custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
 	$alt_text = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
