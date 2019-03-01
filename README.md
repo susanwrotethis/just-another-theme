@@ -89,3 +89,17 @@ Fixes Github URI data in style.css.
 * Formatted code and comments in template-tags.php.
 * Added action hooks to header.php, footer.php and page files.
 * Updated the translation template.
+
+### 1.4
+
+* Continued to consolidate CSS and remove unused styles.
+* Added header styles to editor-style.css.
+* Updated the semantic HTML structure in index.php, archive.php and search.php.
+* Added selected widget styles for header widgets.
+* Added a font-smoothing option to customizer.php.
+* Updated the translation template.
+* Added classes to selected header.php and footer.php elements to indicate colored backgrounds.
+* Updated widgets registration to add classes to widgets indicating color styles and vertical or horizontal display.
+* Renamed the template-tags.php file for clarity.
+* Moved Customizer option arrays from functions.php to customizer.php.
+* Updated comments in functions.php and template-functions.php.
