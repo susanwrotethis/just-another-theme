@@ -10,7 +10,7 @@
 </div><!-- .site-content -->
 	</div><!-- .site-content-wrapper -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="color-section color-widgets site-footer">
 		<div class="site-info">
 			<?php get_sidebar( 'footer' ); ?>
 			<?php do_action( 'swt-jat-footer' ); ?>

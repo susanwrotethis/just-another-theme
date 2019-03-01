@@ -23,7 +23,7 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<div class="site-top-wrapper">
+			<div class="color-section color-widgets site-top-wrapper">
 				<div class="site-top-content">
 				<?php
 				$swt_jat_description = get_bloginfo( 'description', 'display' );
@@ -47,12 +47,13 @@
 		<?php do_action( 'swt-jat-header' ); ?>
 
 		<nav id="site-navigation" class="main-navigation">
-			<div class="main-navigation-content">
+			<div class="color-section main-navigation-content">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'swt-jat' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+				'theme_location'	=> 'menu-1',
+				'menu_id'			=> 'primary-menu',
+				'menu_class'		=> 'color-section menu nav-menu',
 			) );
 			?>
 			</div><!-- .main-navigation-content -->
