@@ -32,19 +32,6 @@ function swt_jat_customize_register( $wp_customize )
 		'priority' => 135,
 	) );
 	
-	// Nav menu width
-	$wp_customize->add_setting( 'swt_jat_nav', array(
-		'default'			=> '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'swt_jat_validate_checkbox',
-	) );
-	$wp_customize->add_control( 'swt_jat_nav', array(
-		'label'		  => esc_html__( 'Main Navigation Width', 'swt-jat' ),
-		'description' => esc_html__( 'Set nav bar width to full page width.', 'swt-jat' ),
-		'section'	  => 'swt_jat_design',
-		'type'		  => 'checkbox'
-	) );
-	
 	// Preset color schemes
 	$wp_customize->add_setting( 'swt_jat_skin', array(
 		'default'			=> '',
@@ -53,22 +40,11 @@ function swt_jat_customize_register( $wp_customize )
 	) );
 	
 	$wp_customize->add_control( 'swt_jat_skin', array(
-		'label'		  => esc_html__( 'Color Schemes', 'swt-jat' ),
+		'label'		  => esc_html__( 'Color Scheme', 'swt-jat' ),
 		'description' => esc_html__( 'Pick a color scheme to start your design.', 'swt-jat' ),
 		'section'	  => 'swt_jat_design',
 		'type'		  => 'select',
-		'choices'	  => array(
-			'none'				=> 'Default (Black and White)',	
-			'amethyst'			=> 'Amethyst',
-			'chocolate'			=> 'Chocolate',
-			'deep-red'			=> 'Deep Red',
-			'denim-blue'		=> 'Denim Blue',
-			'espresso'			=> 'Espresso',
-			'kiddie-time' 		=> 'Kiddie Time',
-			'midnight-green'	=> 'Midnight Green',
-			'teal'				=> 'Teal',
-			'wine'				=> 'Wine',
-		),
+		'choices'	  => swt_jat_get_skins(),
 	) );
 	
 	// Body Fonts
@@ -108,22 +84,57 @@ function swt_jat_customize_register( $wp_customize )
 	) );
 	$wp_customize->add_control( 'swt_jat_header_font', array(
 		'label'		  => esc_html__( 'Header Font', 'swt-jat' ),
-		'description' => esc_html__( 'If a body font is selected for the header, it will be applied to all headers. Display fonts will be applied to the site title, page title and H2 only.', 'swt-jat' ),
+		'description' => esc_html__( 'If a body font is selected for the header, it will be applied to all headers. Display fonts will be applied to the site title, page title, widget titles and H2 only.', 'swt-jat' ),
 		'section'	  => 'swt_jat_design',
 		'type'		  => 'select',
 		'choices'	  => $font_dropdown,
 	) );
 	
+	// Font smoothing
+	$wp_customize->add_setting( 'swt_jat_smoothing', array(
+		'default'			=> '0',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'swt_jat_validate_bool',
+	) );
+	$wp_customize->add_control( 'swt_jat_smoothing', array(
+		'label'		  => esc_html__( 'Apply Font Smoothing', 'swt-jat' ),
+		'description' => esc_html__( 'Choose Yes if header or footer text looks too bold.', 'swt-jat' ),
+		'section'	  => 'swt_jat_design',
+		'type'		  => 'select',
+		'choices'	  => array(
+			'0'		=> 'No',
+			'1'		=> 'Yes',
+		),
+	) );
+	
+	// Nav menu width
+	$wp_customize->add_setting( 'swt_jat_nav', array(
+		'default'			=> '0',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'swt_jat_validate_bool',
+	) );
+	$wp_customize->add_control( 'swt_jat_nav', array(
+		'label'		  => esc_html__( 'Main Navigation Width', 'swt-jat' ),
+		'description' => esc_html__( 'Set nav bar to full page width.', 'swt-jat' ),
+		'section'	  => 'swt_jat_design',
+		'type'		  => 'select',
+		'choices'	  => array(
+			'0'		=> 'No',
+			'1'		=> 'Yes',
+		),
+	) );
+	
+	// Use excerpt or full content
 	$wp_customize->add_setting( 'swt_jat_index_content', array(
 		'default'			=> 'excerpt',
 		'transport'         => 'refresh',
-		'sanitize_callback' => 'swt_jat_validate_content_radio',
+		'sanitize_callback' => 'swt_jat_validate_content',
 	) );
 	$wp_customize->add_control( 'swt_jat_index_content', array(
 		'label'		  => esc_html__( 'Index Page Content', 'swt-jat' ),
 		'description' => esc_html__( 'Show excerpt or full post on index and archive pages.', 'swt-jat' ),
 		'section'	  => 'swt_jat_design',
-		'type'		  => 'radio',
+		'type'		  => 'select',
 		'choices'	  => array(
 			'excerpt'	=> 'Excerpt',
 			'post'		=> 'Full Post',
@@ -143,7 +154,7 @@ function swt_jat_customize_register( $wp_customize )
 	) );
 	$wp_customize->add_control( 'swt_jat_sidebar_width', array(
 			'label'		  => esc_html__( 'Primary Sidebar Width', 'swt-jat' ),
-			'description' => esc_html__( 'Width as a percentage of the page. Default is 33.', 'swt-jat' ),
+			'description' => esc_html__( 'Width as a percentage of the content area. Default is 33.', 'swt-jat' ),
 			'section'	  => 'swt_jat_sidebar',
 			'type'		  => 'number',
 			'input_attrs' => array(
@@ -160,7 +171,7 @@ function swt_jat_customize_register( $wp_customize )
 			'sanitize_callback' => 'swt_jat_validate_checkbox',
 		) );
 		$wp_customize->add_control( 'swt_jat_cols_'.$template, array(
-			'label'		  => esc_html__( $tname, 'swt-jat' ),
+			'label'		  => esc_html__( sprintf( 'Add sidebar to %s', $tname ), 'swt-jat' ),
 			'section'	  => 'swt_jat_sidebar',
 			'type'		  => 'checkbox',
 		) );
@@ -224,6 +235,11 @@ function swt_jat_validate_email( $email )
 	return ( isset( $email ) && is_email( $email ) ? $email : '' );
 }
 
+// Validate boolean
+function swt_jat_validate_bool( $checked ) {
+ 	return ( isset( $checked ) && '1' == $checked ? '1' : '0' );
+}
+
 // Validate checkboxes
 function swt_jat_validate_checkbox( $checked ) {
  	return ( isset( $checked ) && true == $checked ? true : false );
@@ -237,7 +253,7 @@ function swt_jat_validate_width( $number, $setting )
 }
 
 // Validate content choice
-function swt_jat_validate_content_radio( $checked )
+function swt_jat_validate_content( $checked )
 {
 	return ( $checked == 'post' ? $checked : 'excerpt' );
 }
@@ -315,4 +331,359 @@ function swt_jat_find_font( $fonts, $key )
 		return false; // Default if selected value not found
 	}
 	return $key;
+}
+
+// CUSTOMIZATION VALUES SETUP BEGINS HERE ////////////////////////////////////////////////
+// Return array of skins.
+function swt_jat_get_skins()
+{
+	return array(
+		'none'				=> 'Default (Black and White)',	
+		'amethyst'			=> 'Amethyst',
+		'chocolate'			=> 'Chocolate',
+		'deep-red'			=> 'Deep Red',
+		'denim-blue'		=> 'Denim Blue',
+		'espresso'			=> 'Espresso',
+		'kiddie-time' 		=> 'Kiddie Time',
+		'midnight-green'	=> 'Midnight Green',
+		'teal'				=> 'Teal',
+		'wine'				=> 'Wine',
+	);
+}
+
+// Return array of theme templates; translate on output, not here.
+// 'theme_mod_value' => 'Customizer label'
+function swt_jat_get_templates()
+{
+	return apply_filters( 'swt-jat-column-templates', array(
+		'single'	=> 'single post pages',
+		'blog'		=> 'blog page',
+		'archive'	=> 'blog archive pages',
+		'search'	=> 'search page',
+		'error'		=> '404 page'
+	) );
+}
+
+// Return array of supported body fonts; translate on output, not here.
+function swt_jat_get_body_fonts()
+{
+	return apply_filters( 'swt-jat-body-fonts', array(
+		'sans-serif' => array( 
+			'label'	=> 'Default Sans-Serif', // This is default
+			'css'	=> "Arial, Helvetica, sans-serif", 
+			'load'	=> null 
+		), 
+		'serif' => array( 
+			'label'	=> 'Default Serif', 
+			'css'	=> "'Times New Roman', Times, serif", 
+			'load'	=> null 
+		),
+		'antic-slab' => array( 
+			'label'	=> 'Antic Slab', 
+			'css'	=> "'Antic Slab', serif", 
+			'load'	=>'Antic+Slab' 
+		),
+		'armata' => array( 
+			'label'	=> 'Armata', 
+			'css'	=> "'Armata', sans-serif", 
+			'load'	=> 'Armata' 
+		),
+		'duru-sans' => array( 
+			'label'	=> 'Duru Sans', 
+			'css'	=> "'Duru Sans', sans-serif", 
+			'load'	=>'Duru+Sans' 
+		),
+		'exo' => array( 
+			'label'	=> 'Exo', 
+			'css'	=> "'Exo', sans-serif", 
+			'load'	=> 'Exo' 
+		),
+		'fauna-one' => array( 
+			'label'	=> 'Fauna One', 
+			'css'	=> "'Fauna One', serif", 
+			'load'	=> 'Fauna+One' 
+		),
+		'georgia' => array(
+			'label' => 'Georgia',
+			'css'	=> "Georgia, 'Times New Roman', Times, serif",
+			'load'	=> null,
+		),
+		'glegoo' => array( 
+			'label'	=> 'Glegoo', 
+			'css'	=> "'Glegoo', serif", 
+			'load'	=> 'Glegoo' 
+		),
+		'heebo' => array( 
+			'label'	=> 'Heebo', 
+			'css'	=> "'Heebo', sans-serif", 
+			'load'	=> 'Heebo' 
+		),
+		'junge' => array( 
+			'label'	=> 'Junge', 
+			'css'	=> "'Junge', serif", 
+			'load'	=> 'Junge' 
+		),
+		'lora' => array( 
+			'label'	=> 'Lora', 
+			'css'	=> "'Lora', serif", 
+			'load'	=> 'Lora' 
+		),
+		'martel' => array( 
+			'label'	=> 'Martel', 
+			'css'	=> "'Martel', serif", 
+			'load'	=> 'Martel' 
+		),
+		'martel-sans' => array( 
+			'label'	=> 'Martel Sans', 
+			'css'	=> "'Martel Sans', sans-serif", 
+			'load'	=> 'Martel+Sans' 
+		),
+		'merriweather' => array( 
+			'label'	=> 'Merriweather', 
+			'css'	=> "'Merriweather', serif", 
+			'load'	=> 'Merriweather:300' 
+		),
+		'merriweather-sans' => array( 
+			'label'	=> 'Merriweather Sans', 
+			'css'	=> "'Merriweather Sans', sans-serif", 
+			'load'	=> 'Merriweather+Sans' 
+		),
+		'montserrat' => array( 
+			'label'	=> 'Montserrat', 
+			'css'	=> "'Montserrat', sans-serif", 
+			'load'	=> 'Montserrat' 
+		),
+		'nobile' => array( 
+			'label'	=>'Nobile', 
+			'css'	=> "'Nobile', sans-serif", 
+			'load'	=> 'Nobile' 
+		),
+		'open-sans' => array( 
+			'label'	=> 'Open Sans', 
+			'css'	=> "'Open Sans', sans-serif", 
+			'load'	=> 'Open+Sans' 
+		),
+		'oxygen' => array( 
+			'label'	=> 'Oxygen', 
+			'css'	=> "'Oxygen', sans-serif", 
+			'load'	=> 'Oxygen' 
+		),
+		'playfair-display' => array( 
+			'label'	=> 'Playfair Display', 
+			'css'	=> "'Playfair Display', serif", 
+			'load'	=> 'Playfair+Display' 
+		),
+		'poppins' => array( 
+			'label'	=> 'Poppins', 
+			'css'	=> "'Poppins', sans-serif", 
+			'load'	=> 'Poppins' 
+		),
+		'questrial' => array( 
+			'label'	=> 'Questrial', 
+			'css'	=> "'Questrial', sans-serif", 
+			'load'	=> 'Questrial' 
+		),
+		'quicksand' => array( 
+			'label'	=> 'Quicksand', 
+			'css'	=> "'Quicksand', sans-serif", 
+			'load'	=> 'Quicksand' 
+		),
+		'raleway' => array( 
+			'label'	=> 'Raleway', 
+			'css'	=> "'Raleway', sans-serif", 
+			'load'	=> 'Raleway' 
+		),
+		'rhodium-libre' => array( 
+			'label'	=> 'Rhodium Libre', 
+			'css'	=> "'Rhodium Libre', serif", 
+			'load '	=> 'Rhodium+Libre' 
+		),
+		'roboto' => array( 
+			'label'	=> 'Roboto', 
+			'css'	=> "'Roboto', sans-serif", 
+			'load'	=> 'Roboto' 
+		),
+		'roboto-slab' => array( 
+			'label'	=> 'Roboto Slab', 
+			'css'	=> "'Roboto Slab', serif", 
+			'load'	=> 'Roboto+Slab:300' 
+		),
+		'rosarivo' => array( 
+			'label'	=> 'Rosarivo', 
+			'css'	=> "'Rosarivo', serif", 
+			'load'	=> 'Rosarivo' 
+		),
+		'ruda' => array( 
+			'label'	=> 'Ruda', 
+			'css'	=> "'Ruda', sans-serif", 
+			'load'	=> 'Ruda' 
+		),
+		'sarala' => array( 
+			'label'	=> 'Sarala', 
+			'css'	=> "'Sarala', sans-serif", 
+			'load'	=> 'Sarala' 
+		),
+		'sintony' => array( 
+			'label'	=> 'Sintony', 
+			'css'	=> "'Sintony', sans-serif", 
+			'load'	=> 'Sintony' 
+		),
+		'slabo=13px' => array( 
+			'label'	=> 'Slabo 13px', 
+			'css'	=> "'Slabo 13px', serif", 
+			'load'	=> 'Slabo+13px' 
+		),
+		'titillium-web' => array( 
+			'label'	=> 'Titillium Web', 
+			'css'	=> "'Titillium Web', sans-serif", 
+			'load'	=> 'Titillium+Web' 
+		),
+		'ubuntu' => array( 
+			'label'	=> 'Ubuntu', 
+			'css'	=> "'Ubuntu', sans-serif", 
+			'load'	=> 'Ubuntu' 
+		),
+		'work-sans' => array( 
+			'label'	=> 'Work Sans', 
+			'css'	=> "'Work Sans', sans-serif", 
+			'load'	=> 'Work+Sans' 
+		)
+	) );
+}
+
+// Return array of supported header fonts; translate on output, not here.
+function swt_jat_get_header_fonts()
+{
+	return apply_filters( 'swt-jat-header-fonts', array(
+		'amita' => array( 
+			'label'	=> 'Amita', 
+			'css'	=> "'Amita', cursive", 
+			'load'	=> 'Amita' 
+		),
+		'Anonymous Pro' => array( 
+			'label'	=> 'Anonymous Pro', 
+			'css'	=> "'Anonymous Pro', monospace", 
+			'load'	=> 'Anonymous+Pro' 
+		),
+		'arima-madurai' => array( 
+			'label'	=> 'Arima Madurai', 
+			'css'	=> "'Arima Madurai', cursive", 
+			'load'	=> 'Arima+Madurai' 
+		),
+		'delius' => array( 
+			'label'	=> 'Delius', 
+			'css'	=> "'Delius', cursive", 
+			'load'	=> 'Delius' 
+		),
+		'delius-swash-caps' => array( 
+			'label'	=> 'Delius Swash Caps', 
+			'css'	=> "'Delius Swash Caps', cursive", 
+			'load'	=> 'Delius+Swash+Caps' 
+		),
+		'elsie-swash-caps' => array(
+			'label'	=> 'Elsie Swash Caps', 
+			'css'	=> "'Elsie Swash Caps', cursive", 
+			'load'	=> 'Elsie+Swash+Caps' 
+		),
+		'englebert' => array( 
+			'label'	=> 'Englebert', 
+			'css'	=> "'Englebert', sans-serif", 
+			'load'	=> 'Englebert' 
+		),
+		'forum' => array( 
+			'label'	=> 'Forum', 
+			'css'	=> "'Forum', cursive", 
+			'load'	=> 'Forum' 
+		),
+		'handlee' => array(
+			'label'	=> 'Handlee', 
+			'css'	=> "'Handlee', cursive", 
+			'load'	=> 'Handlee' 
+		),
+		'happy-monkey' => array( 
+			'label'	=> 'Happy Monkey', 
+			'css'	=> "'Happy Monkey', cursive", 
+			'load'	=> 'Happy+Monkey' 
+		),
+		'kalam' => array( 
+			'label'	=> 'Kalam', 
+			'css'	=> "'Kalam', cursive", 
+			'load'	=> 'Kalam' 
+		),
+		'kotta-one' => array(
+			'label'	=> 'Kotta One', 
+			'css'	=> "'Kotta One', serif", 
+			'load'	=> 'Kotta+One' 
+		),
+		'mate-sc' => array( 
+			'label'	=> 'Mate SC', 
+			'css'	=> "'Mate SC', serif", 
+			'load'	=> 'Mate+SC' 
+		),
+		'neucha' => array( 
+			'label'	=> 'Neucha', 
+			'css'	=> "'Neucha', cursive", 
+			'load'	=> 'Neucha' 
+		),
+		'old-standard-tt' => array( 
+			'label'	=> 'Old Standard TT', 
+			'css'	=> "'Old Standard TT', serif", 
+			'load'	=> 'Old+Standard+TT:400i' 
+		),
+		'oldenburg' => array( 
+			'label'	=> 'Oldenburg', 
+			'css'	=> "'Oldenburg', cursive", 
+			'load'	=> 'Oldenburg' 
+		),
+		'oswald' => array( 
+			'label'	=> 'Oswald', 
+			'css'	=> "'Oswald', sans-serif", 
+			'load'	=> 'Oswald' 
+		),
+		'paprika' => array( 
+			'label'	=> 'Paprika', 
+			'css'	=> "'Paprika', cursive", 
+			'load'	=> 'Paprika' 
+		),
+		'petit-formal-script' => array( 
+			'label'	=> 'Petit Formal Script', 
+			'css'	=> "'Petit Formal Script', cursive", 
+			'load'	=> 'Petit+Formal+Script'
+		),
+		'schoolbell' => array( 
+			'label'	=> 'Schoolbell', 
+			'css'	=> "'Schoolbell', cursive", 
+			'load'	=> 'Schoolbell' 
+		),
+		'simonetta' => array( 
+			'label'	=> 'Simonetta', 
+			'css'	=> "'Simonetta', cursive", 
+			'load'	=> 'Simonetta' 
+		),
+		'sofia' => array( 
+			'label'	=> 'Sofia', 
+			'css'	=> "'Sofia', cursive", 
+			'load'	=> 'Sofia' 
+		),
+		'special-elite' => array( 
+			'label'	=> 'Special Elite', 
+			'css'	=> "'Special Elite', cursive", 
+			'load'	=> 'Special+Elite' 
+		),
+		'stint-ultra-expanded' => array( 
+			'label'	=> 'Stint Ultra Expanded', 
+			'css'	=> "'Stint Ultra Expanded', cursive", 
+			'load'	=> 'Stint+Ultra+Expanded' 
+		),
+		'tillana' => array( 
+			'label'	=> 'Tillana', 
+			'css'	=> "'Tillana', cursive", 
+			'load'	=> 'Tillana' 
+		),
+		'unkempt' => array( 
+			'label'	=> 'Unkempt', 
+			'css'	=> "'Unkempt', cursive", 
+			'load'	=> 'Unkempt' 
+		),
+	) );
 }
