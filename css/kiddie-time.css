@@ -62,7 +62,8 @@ input[type="submit"]:focus{
 }
 
 .main-navigation-content,
-.main-navigation ul {
+.main-navigation ul,
+.color-section.menu ul {
 	background-color: #242424;
 }
 

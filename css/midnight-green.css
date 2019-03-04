@@ -64,7 +64,7 @@ input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	background-color: #26644c; 
+	background-color: #24364f;
 }
 
 blockquote,
@@ -141,7 +141,6 @@ h4,
 	background-color: #1a2622; 
 	border: 1px solid rgba(0,0,0,.3);
 	margin-bottom: 1rem;
-	margin-top: 15px;
 	padding: 0 0 15px 0;
 }
 
@@ -150,6 +149,8 @@ h4,
 }
 
 .widgets-footer .widget > p,
+.widgets-footer .widget > ul,
+.widgets-footer .widget > ol,
 .widgets-footer .widget > img,
 .widgets-footer .widget > form,
 .widgets-footer .widget > table,

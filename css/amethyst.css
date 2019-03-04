@@ -78,7 +78,7 @@ h2,
 .blog .entry-title,
 .archive .entry-title,
 .search-results .entry-title {
-	color: #212b47;
+	color: #362f3b;
 }
 
 h3:before {
@@ -87,7 +87,7 @@ h3:before {
 
 h4,
 .em-color {
-	color: #2c4604;
+	color: #283659;
 }
 
 .color-section input[type="text"],
@@ -116,7 +116,7 @@ h4,
 .color-section input[type="button"],
 .color-section input[type="reset"],
 .color-section input[type="submit"] {
-	background-color: #55673B;
+	background-color: #596b45;
 }
 
 .color-section .gobutton:hover,
@@ -134,7 +134,7 @@ h4,
 .color-section input[type="submit"]:hover,
 .color-section input[type="submit"]:active,
 .color-section input[type="submit"]:focus {
-	background-color: #6f4f66;
+	background-color: #4a533f;
 }
 
 .widgets-footer .widget-title {

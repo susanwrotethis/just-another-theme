@@ -1,5 +1,5 @@
 /**
- * CSS for Mocha color scheme presets.
+ * CSS for Espresso color scheme presets.
  *
  * @package just-another-theme
  */
@@ -17,7 +17,7 @@ a {
 a:hover, 
 a:focus, 
 a:active {
-	color: #826a1a;
+	color: #483734;
 }
 
 .gobutton,
@@ -34,7 +34,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #8e3e2f;
+	background-color: #6c322a;
 }
 
 .gobutton:hover,
@@ -64,7 +64,7 @@ input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	background-color: #826a1a;
+	background-color: #8e3e2f; 
 }
 
 blockquote,
@@ -154,33 +154,6 @@ select {
 .color-section textarea, 
 .color-section select {
 	background-color: #362c2a;
-}
-
-.color-section .gobutton,
-.color-section .gobutton:visited,
-.color-section button,
-.color-section input[type="button"],
-.color-section input[type="reset"],
-.color-section input[type="submit"] {
-	background-color: #8e3e2f; 
-}
-
-.color-section .gobutton:hover,
-.color-section .gobutton:focus,
-.color-section .gobutton:active,
-.color-section button:hover,
-.color-section button:active, 
-.color-section button:focus,
-.color-section input[type="button"]:hover,
-.color-section input[type="button"]:active,
-.color-section input[type="button"]:focus,
-.color-section input[type="reset"]:hover,
-.color-section input[type="reset"]:active,
-.color-section input[type="reset"]:focus,
-.color-section input[type="submit"]:hover,
-.color-section input[type="submit"]:active,
-.color-section input[type="submit"]:focus {
-	background-color: #826a1a;
 }
 
 .widgets-footer .widget-title {
