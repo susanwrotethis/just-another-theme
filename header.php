@@ -27,10 +27,13 @@
 				<div class="site-top-content">
 				<?php
 				$swt_jat_description = get_bloginfo( 'description', 'display' );
-				if ( $swt_jat_description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $swt_jat_description; /* WPCS: xss ok. */ ?></p>
+				$swt_hide_description = get_theme_mod( 'swt_jat_hide_description', false);
+				if ( ( $swt_jat_description && !$swt_hide_description ) /*|| is_customize_preview()*/ ): ?>
+					<p class="site-description"><?php echo $swt_jat_description; ?></p>
+					<?php get_sidebar( 'header' ); ?>
+				<?php else: ?>
+					<div class="no-description"><?php get_sidebar( 'header' ); ?></div>
 				<?php endif; ?>
-				<?php get_sidebar( 'header' ); ?>
 				</div><!-- .site-top-content -->
 			</div><!-- .site-top-wrapper -->
 			<?php do_action( 'swt-jat-top' ); ?>
@@ -41,6 +44,9 @@
 				if ( is_front_page() && is_home() ) : 
 				?><h1 class="site-title <?php echo ( $swt_jat_has_logo ? 'has_logo' : 'no_logo '); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?><p class="site-title <?php echo ( $swt_jat_has_logo ? 'has_logo' : 'no_logo '); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php endif; ?>
+			<?php if ( $swt_hide_description ): ?>
+			<p class="hide-description screen-reader-text"><?php echo $swt_jat_description; ?></p>
 			<?php endif; ?>
 			</div><!-- .site-title-wrapper -->
 		</div><!-- .site-branding -->
@@ -58,9 +64,10 @@
 			?>
 			</div><!-- .main-navigation-content -->
 		</nav><!-- .main-navigation -->
+		<?php get_sidebar( 'top' ); ?>
+		<?php do_action( 'swt-jat-post-header' ); ?>
 	</header><!-- #masthead .site-header -->
 
 	<div id="content" class="site-content-wrapper">
 		<div class="site-content">
 			<?php do_action( 'swt-jat-pre-content' ); ?>
-			<?php get_sidebar( 'top' ); ?>
