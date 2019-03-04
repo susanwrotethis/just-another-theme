@@ -7,14 +7,16 @@ Just Another Theme is a lightweight theme good for small personal, business and 
  * One menu
  * Five widget areas
  * Header logo support
- * Multiple theme skin
+ * Multiple theme skins
  * Adjustable main navigation width
+ * Adjustable pre-content widget area width
  * Adjustable primary sidebar width
  * Two-column custom page template
  * Optional two-column layout for blog, archive, single post, search and 404 pages.
  * Support for a selection of Google fonts
  * Support for Jetpack's Infinite Scroll
- * Mobile ready
+ * Responsive design
+ * Accessibility friendly
  * Translation ready
 
 ## Gutenberg
@@ -103,3 +105,18 @@ Fixes Github URI data in style.css.
 * Renamed the template-tags.php file for clarity.
 * Moved Customizer option arrays from functions.php to customizer.php.
 * Updated comments in functions.php and template-functions.php.
+
+### 1.5
+
+* Added four new skins.
+* Completed consolidation of styles.
+* Added Customizer options to change the pre-content area widget width and the abiity to hide or show the home page title.
+* Removed the core checkbox to display the site title and description and replaced it with a custom checkbox to hide or show the description.
+* Extended translation support and updated the translation template.
+* Added styling for core widgets.
+* Added styling for widgets in the top bar.
+* Tested and refined theme appearance on mobile devices.
+* Updated code in header.php for better support of header widgets.
+* Sharpened the toggle menu image and added a dark version for light-colored skins.
+* Updated widget-title styles to make hidden titles available to screen readers.
+* Commented functions.php and customizer.php code.
