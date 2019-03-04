@@ -12,8 +12,21 @@ function swt_jat_customize_register( $wp_customize )
 	// REMOVE WP DEFAULT SECTIONS
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'header_image' );
+	$wp_customize->remove_control('header_text');
 	$wp_customize->remove_section( 'background_image' );
 	
+	// Add control to hide site description. Replaces core's header_text control.
+	$wp_customize->add_setting( 'swt_jat_hide_description', array(
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'swt_jat_validate_checkbox',
+	) );
+	$wp_customize->add_control( 'swt_jat_hide_description', array(
+		'label'		  => esc_html__( 'Hide the site description.', 'swt-jat' ),
+		'section'	  => 'title_tagline',
+		'type'		  => 'checkbox',
+	) );
+	
+	// Add controls for customized site copyright.
 	$wp_customize->add_setting( 'swt_jat_copyright', array(
 		'default'			=> '',
 		'transport'         => 'postMessage',
@@ -32,13 +45,12 @@ function swt_jat_customize_register( $wp_customize )
 		'priority' => 135,
 	) );
 	
-	// Preset color schemes
+	// Add controls for skins.
 	$wp_customize->add_setting( 'swt_jat_skin', array(
 		'default'			=> '',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
-	
 	$wp_customize->add_control( 'swt_jat_skin', array(
 		'label'		  => esc_html__( 'Color Scheme', 'swt-jat' ),
 		'description' => esc_html__( 'Pick a color scheme to start your design.', 'swt-jat' ),
@@ -47,7 +59,7 @@ function swt_jat_customize_register( $wp_customize )
 		'choices'	  => swt_jat_get_skins(),
 	) );
 	
-	// Body Fonts
+	// Body fonts: get list of availble fonts.
 	$body_fonts = swt_jat_get_body_fonts();
 	$font_dropdown = array();
 	foreach ( $body_fonts as $fkey => $values ) {
@@ -55,6 +67,7 @@ function swt_jat_customize_register( $wp_customize )
 	}
 	$body_fonts = null;
 	
+	// Add body font controls.
 	$wp_customize->add_setting( 'swt_jat_body_font', array(
 		'default'			=> 'sans-serif',
 		'transport'         => 'refresh',
@@ -68,7 +81,7 @@ function swt_jat_customize_register( $wp_customize )
 		'choices'	  => $font_dropdown,
 	) );
 	
-	// Header Fonts: append to body fonts
+	// Header fonts: append to existing list of body fonts.
 	$header_fonts = swt_jat_get_header_fonts();
 	foreach ( $header_fonts as $hkey => $values ) {
 		if ( !array_key_exists( $hkey, $font_dropdown ) ) {
@@ -77,6 +90,7 @@ function swt_jat_customize_register( $wp_customize )
 	}
 	$header_fonts = null;
 	
+	// Add header font controls.
 	$wp_customize->add_setting( 'swt_jat_header_font', array(
 		'default'			=> 'sans-serif',
 		'transport'         => 'refresh',
@@ -90,7 +104,7 @@ function swt_jat_customize_register( $wp_customize )
 		'choices'	  => $font_dropdown,
 	) );
 	
-	// Font smoothing
+	// Add font smoothing to colored areas?
 	$wp_customize->add_setting( 'swt_jat_smoothing', array(
 		'default'			=> '0',
 		'transport'         => 'refresh',
@@ -102,12 +116,29 @@ function swt_jat_customize_register( $wp_customize )
 		'section'	  => 'swt_jat_design',
 		'type'		  => 'select',
 		'choices'	  => array(
-			'0'		=> 'No',
-			'1'		=> 'Yes',
+			'0'		=> esc_html__( 'No', 'swt-jat' ),
+			'1'		=> esc_html__( 'Yes', 'swt-jat' ),
 		),
 	) );
 	
-	// Nav menu width
+	// Display or hide home page title.
+	$wp_customize->add_setting( 'swt_jat_home_title', array(
+		'default'			=> '0',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'swt_jat_validate_bool_true',
+	) );
+	$wp_customize->add_control( 'swt_jat_home_title', array(
+		'label'		  => esc_html__( 'Show Home Page Title', 'swt-jat' ),
+		'description' => esc_html__( 'Home page title is hidden by default.', 'swt-jat' ),
+		'section'	  => 'swt_jat_design',
+		'type'		  => 'select',
+		'choices'	  => array(
+			'0'		=> esc_html__( 'No', 'swt-jat' ),
+			'1'		=> esc_html__( 'Yes', 'swt-jat' ),
+		),
+	) );
+	
+	// Set main navigation menu width.
 	$wp_customize->add_setting( 'swt_jat_nav', array(
 		'default'			=> '0',
 		'transport'         => 'refresh',
@@ -119,12 +150,29 @@ function swt_jat_customize_register( $wp_customize )
 		'section'	  => 'swt_jat_design',
 		'type'		  => 'select',
 		'choices'	  => array(
-			'0'		=> 'No',
-			'1'		=> 'Yes',
+			'0'		=> esc_html__( 'No', 'swt-jat' ),
+			'1'		=> esc_html__( 'Yes', 'swt-jat' ),
 		),
 	) );
 	
-	// Use excerpt or full content
+	// Set pre-content widget area width.
+	$wp_customize->add_setting( 'swt_jat_widget_area', array(
+		'default'			=> '0',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'swt_jat_validate_bool',
+	) );
+	$wp_customize->add_control( 'swt_jat_widget_area', array(
+		'label'		  => esc_html__( 'Widget Area Width', 'swt-jat' ),
+		'description' => esc_html__( 'Set Pre-Content Widgets area to full page width.', 'swt-jat' ),
+		'section'	  => 'swt_jat_design',
+		'type'		  => 'select',
+		'choices'	  => array(
+			'0'		=> esc_html__( 'No', 'swt-jat' ),
+			'1'		=> esc_html__( 'Yes', 'swt-jat' ),
+		),
+	) );
+	
+	// Use excerpt or full content?
 	$wp_customize->add_setting( 'swt_jat_index_content', array(
 		'default'			=> 'excerpt',
 		'transport'         => 'refresh',
@@ -136,8 +184,8 @@ function swt_jat_customize_register( $wp_customize )
 		'section'	  => 'swt_jat_design',
 		'type'		  => 'select',
 		'choices'	  => array(
-			'excerpt'	=> 'Excerpt',
-			'post'		=> 'Full Post',
+			'excerpt'	=> esc_html__( 'Excerpt', 'swt-jat' ),
+			'post'		=> esc_html__( 'Full Post', 'swt-jat' ),
 		),
 	) );
 	
@@ -147,6 +195,7 @@ function swt_jat_customize_register( $wp_customize )
 		'priority' => 130,
 	) );
 	
+	// Make sidebar width adjustable.
 	$wp_customize->add_setting( 'swt_jat_sidebar_width', array(
 			'default'			=> 33,
 			'transport'         => 'refresh',
@@ -164,6 +213,7 @@ function swt_jat_customize_register( $wp_customize )
 			),
 	) );
 	
+	// Loop through templates to build control for each.
 	foreach ( swt_jat_get_templates() as $template => $tname ) {
 		
 		$wp_customize->add_setting( 'swt_jat_cols_'.$template, array(
@@ -181,14 +231,15 @@ function swt_jat_customize_register( $wp_customize )
 add_action( 'customize_register', 'swt_jat_customize_register', 10 );
 
 // CUSTOMIZER BINDING FUNCTIONS BEGIN HERE ///////////////////////////////////////////////
+// Binding for partial refreshes. This theme mostly uses standard refresh.
 function swt_jat_register_partials( $wp_customize ) 
 {
-	// Binding core items for refresh
+	// Binding core items for refresh.
 	$wp_customize->get_setting( 'blogname' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
  
     // Abort if selective refresh is not available.
-    if ( ! isset( $wp_customize->selective_refresh ) ) {
+    if ( !isset( $wp_customize->selective_refresh ) ) {
         return;
     }
  
@@ -229,30 +280,29 @@ function swt_jat_render_partial_blogdescription()
 }
 
 // CUSTOM VALIDATION FUNCTIONS BEGIN HERE ////////////////////////////////////////////////
-// Validate email
-function swt_jat_validate_email( $email )
-{
-	return ( isset( $email ) && is_email( $email ) ? $email : '' );
+// Validate boolean. False is default.
+function swt_jat_validate_bool( $setting) {
+ 	return ( isset( $setting ) && '1' == $setting ? '1' : '0' );
 }
 
-// Validate boolean
-function swt_jat_validate_bool( $checked ) {
- 	return ( isset( $checked ) && '1' == $checked ? '1' : '0' );
+// Validate boolean. True is default.
+function swt_jat_validate_bool_true( $setting) {
+ 	return ( isset( $setting ) && '0' == $setting ? '0' : '1' );
 }
 
-// Validate checkboxes
+// Validate checkboxes.
 function swt_jat_validate_checkbox( $checked ) {
  	return ( isset( $checked ) && true == $checked ? true : false );
 }
 
-// Validate sidebar width
+// Validate sidebar width.
 function swt_jat_validate_width( $number, $setting ) 
 {
   $number = absint( $number );
   return ( $number && $number > 19 && $number < 50 ? $number : 33 );
 }
 
-// Validate content choice
+// Validate content choice.
 function swt_jat_validate_content( $checked )
 {
 	return ( $checked == 'post' ? $checked : 'excerpt' );
@@ -262,46 +312,50 @@ function swt_jat_validate_content( $checked )
 // Prep the string to load Google fonts on Customizer update to save work on front end
 function swt_jat_prep_google_fonts( $old_value, $value, $option )
 {
+	// Get existing values if found.
 	$google_fonts = get_option( 'swt-jat-gfont', '' );
 	$body_font = ( isset( $value['swt_jat_body_font'] ) ? $value['swt_jat_body_font'] : '' );
 	$header_font = ( isset( $value['swt_jat_header_font'] ) ? $value['swt_jat_header_font'] : '' );
 	
-	// Look up info for selected body font
+	// Get list of available body fonts. Look up info for selected body font.
 	$body_fonts = swt_jat_get_body_fonts();
 	if ( !$body_font || !swt_jat_find_font( $body_fonts, $body_font ) ) {
-		$body_font =  array_key_first( $body_fonts ); // Default if selected value not found
+		$body_font =  array_key_first( $body_fonts ); // Default if selected value not found.
 	}
-	$body_font_info = $body_fonts[$body_font];
+	$body_font_info = $body_fonts[$body_font]; // Remember this.
 	
-	$display_style_header = false;
+	// Get list of available header fonts.
+	$display_style_header = false; // Set flag to determine if headers use header font.
 	$header_fonts = swt_jat_get_header_fonts();
 	
-	// Look up info for selected header font
+	// Look up info for selected header font. Look in header fonts first.
 	if ( $header_font && swt_jat_find_font( $header_fonts, $header_font ) ) {
 		$display_style_header = true;
 		$header_font_info = $header_fonts[$header_font];
-	} 
+	} // If not found in header fonts, look in body fonts next.
 	else if ( !$header_font || !swt_jat_find_font( $body_fonts, $header_font ) ) {
-		$header_font =  array_key_first( $body_fonts ); // Default if selected value not found
+		$header_font =  array_key_first( $body_fonts ); // Default if selected value not found.
 		$header_font_info = $body_fonts[$header_font];
 	} else {
-		$header_font_info = $body_fonts[$header_font];
+		$header_font_info = $body_fonts[$header_font]; // Fallback; use the first header font.
 	}
 	
-	// Clear the arrays because we're done with them
+	// Clear the arrays because we're done with them.
 	$body_fonts = null;
 	$header_fonts = null;
 	
+	// Remove unset values, then convert array to string.
 	$gfont = array_filter( array( $body_font_info['load'], $header_font_info['load'] ) );
 	$gstring = implode( '|', $gfont );
 	
-	// If no font changes, there's nothing more to do
+	// If selected fonts are the same as what's already set, there's nothing more to do.
 	if ( $gstring == $google_fonts ) return;
 	
 	// Build the font-styles to add as inline styles
 	// Don't add newlines to styles; they will break TinyMCE.
 	$css ='';
 	
+	// Build the header css if not a standard font.
 	if ( 'sans-serif' != $header_font ) {
 		if ( $display_style_header ){
 			$css = 'h1,h2:not(.comments-title),.site-title {font-family: '.$header_font_info['css'].';} ';
@@ -310,6 +364,7 @@ function swt_jat_prep_google_fonts( $old_value, $value, $option )
 		}
 	}
 	
+	// Build the body css if not a standard font.
 	if ( 'sans-serif' != $body_font ) {
 		if ( $display_style_header ){
 			$css = $css.'body,button,input,select,optgroup,textarea,h3,h4,h5,h6,.main-navigation a {font-family: '.$body_font_info['css'].';}';
@@ -318,7 +373,7 @@ function swt_jat_prep_google_fonts( $old_value, $value, $option )
 		}
 	}
 	
-	// If we store these in theme mods it will trigger this function again. Avoid infinite loop. 
+	// If we store these in theme mods it will trigger this function again. Store separately to avoid infinite loop. 
 	update_option( 'swt-jat-gfont', $gstring );
 	update_option( 'swt-jat-css', $css );
 }
@@ -338,16 +393,20 @@ function swt_jat_find_font( $fonts, $key )
 function swt_jat_get_skins()
 {
 	return array(
-		'none'				=> 'Default (Black and White)',	
-		'amethyst'			=> 'Amethyst',
-		'chocolate'			=> 'Chocolate',
-		'deep-red'			=> 'Deep Red',
-		'denim-blue'		=> 'Denim Blue',
-		'espresso'			=> 'Espresso',
-		'kiddie-time' 		=> 'Kiddie Time',
-		'midnight-green'	=> 'Midnight Green',
-		'teal'				=> 'Teal',
-		'wine'				=> 'Wine',
+		'none'				=> __( 'Default (Black and White)', 'swt-jat' ),
+		'amethyst'			=> __( 'Amethyst', 'swt-jat' ),
+		'blue'				=> __( 'Blue', 'swt-jat' ),
+		'burnt-orange'		=> __( 'Burnt Orange', 'swt-jat' ),
+		'chocolate'			=> __( 'Chocolate', 'swt-jat' ),
+		'deep-red'			=> __( 'Deep Red', 'swt-jat' ),
+		'denim-blue'		=> __( 'Denim Blue', 'swt-jat' ),
+		'emerald'			=> __( 'Emerald', 'swt-jat' ),
+		'espresso'			=> __( 'Espresso', 'swt-jat' ),
+		'kiddie-time' 		=> __( 'Kiddie Time', 'swt-jat' ),
+		'midnight-green'	=> __( 'Midnight Green', 'swt-jat' ),
+		'pearl'				=> __( 'Pearl', 'swt-jat' ),
+		'plum'				=> __( 'Plum', 'swt-jat' ),
+		'teal'				=> __( 'Teal', 'swt-jat' ),
 	);
 }
 
@@ -356,195 +415,195 @@ function swt_jat_get_skins()
 function swt_jat_get_templates()
 {
 	return apply_filters( 'swt-jat-column-templates', array(
-		'single'	=> 'single post pages',
-		'blog'		=> 'blog page',
-		'archive'	=> 'blog archive pages',
-		'search'	=> 'search page',
-		'error'		=> '404 page'
+		'single'	=> __( 'single post pages', 'swt-jat' ),
+		'blog'		=> __( 'blog page', 'swt-jat' ),
+		'archive'	=> __( 'blog archive pages', 'swt-jat' ),
+		'search'	=> __( 'search page', 'swt-jat' ),
+		'error'		=> __( '404 page', 'swt-jat' ),
 	) );
 }
 
 // Return array of supported body fonts; translate on output, not here.
-function swt_jat_get_body_fonts()
+function swt_jat_get_body_fonts() 
 {
 	return apply_filters( 'swt-jat-body-fonts', array(
 		'sans-serif' => array( 
-			'label'	=> 'Default Sans-Serif', // This is default
+			'label'	=> __( 'Default Sans-Serif','swt-jat' ), // This is default
 			'css'	=> "Arial, Helvetica, sans-serif", 
 			'load'	=> null 
 		), 
 		'serif' => array( 
-			'label'	=> 'Default Serif', 
+			'label'	=> __( 'Default Serif',  'swt-jat' ),
 			'css'	=> "'Times New Roman', Times, serif", 
 			'load'	=> null 
 		),
 		'antic-slab' => array( 
-			'label'	=> 'Antic Slab', 
+			'label'	=> __( 'Antic Slab', 'swt-jat' ),
 			'css'	=> "'Antic Slab', serif", 
 			'load'	=>'Antic+Slab' 
 		),
 		'armata' => array( 
-			'label'	=> 'Armata', 
+			'label'	=> __( 'Armata', 'swt-jat' ),
 			'css'	=> "'Armata', sans-serif", 
 			'load'	=> 'Armata' 
 		),
 		'duru-sans' => array( 
-			'label'	=> 'Duru Sans', 
+			'label'	=> __( 'Duru Sans', 'swt-jat' ),
 			'css'	=> "'Duru Sans', sans-serif", 
 			'load'	=>'Duru+Sans' 
 		),
 		'exo' => array( 
-			'label'	=> 'Exo', 
+			'label'	=> __( 'Exo', 'swt-jat' ),
 			'css'	=> "'Exo', sans-serif", 
 			'load'	=> 'Exo' 
 		),
 		'fauna-one' => array( 
-			'label'	=> 'Fauna One', 
+			'label'	=> __( 'Fauna One',  'swt-jat' ),
 			'css'	=> "'Fauna One', serif", 
 			'load'	=> 'Fauna+One' 
 		),
 		'georgia' => array(
-			'label' => 'Georgia',
+			'label' => __( 'Georgia', 'swt-jat' ),
 			'css'	=> "Georgia, 'Times New Roman', Times, serif",
 			'load'	=> null,
 		),
 		'glegoo' => array( 
-			'label'	=> 'Glegoo', 
+			'label'	=> __( 'Glegoo', 'swt-jat' ),
 			'css'	=> "'Glegoo', serif", 
 			'load'	=> 'Glegoo' 
 		),
 		'heebo' => array( 
-			'label'	=> 'Heebo', 
+			'label'	=> __( 'Heebo', 'swt-jat' ),
 			'css'	=> "'Heebo', sans-serif", 
 			'load'	=> 'Heebo' 
 		),
 		'junge' => array( 
-			'label'	=> 'Junge', 
+			'label'	=> __( 'Junge', 'swt-jat' ),
 			'css'	=> "'Junge', serif", 
 			'load'	=> 'Junge' 
 		),
 		'lora' => array( 
-			'label'	=> 'Lora', 
+			'label'	=> __( 'Lora', 'swt-jat' ),
 			'css'	=> "'Lora', serif", 
 			'load'	=> 'Lora' 
 		),
-		'martel' => array( 
-			'label'	=> 'Martel', 
+		'martel' => array(
+			'label'	=> __( 'Martel',  'swt-jat' ),
 			'css'	=> "'Martel', serif", 
 			'load'	=> 'Martel' 
 		),
 		'martel-sans' => array( 
-			'label'	=> 'Martel Sans', 
+			'label'	=> __( 'Martel Sans', 'swt-jat' ),
 			'css'	=> "'Martel Sans', sans-serif", 
 			'load'	=> 'Martel+Sans' 
 		),
 		'merriweather' => array( 
-			'label'	=> 'Merriweather', 
+			'label'	=> __( 'Merriweather', 'swt-jat' ),
 			'css'	=> "'Merriweather', serif", 
 			'load'	=> 'Merriweather:300' 
 		),
 		'merriweather-sans' => array( 
-			'label'	=> 'Merriweather Sans', 
+			'label'	=> __( 'Merriweather Sans', 'swt-jat' ),
 			'css'	=> "'Merriweather Sans', sans-serif", 
 			'load'	=> 'Merriweather+Sans' 
 		),
 		'montserrat' => array( 
-			'label'	=> 'Montserrat', 
+			'label'	=> __( 'Montserrat', 'swt-jat' ),
 			'css'	=> "'Montserrat', sans-serif", 
 			'load'	=> 'Montserrat' 
 		),
 		'nobile' => array( 
-			'label'	=>'Nobile', 
+			'label'	=> __( 'Nobile', 'swt-jat' ),
 			'css'	=> "'Nobile', sans-serif", 
 			'load'	=> 'Nobile' 
 		),
 		'open-sans' => array( 
-			'label'	=> 'Open Sans', 
+			'label'	=> __( 'Open Sans', 'swt-jat' ),
 			'css'	=> "'Open Sans', sans-serif", 
 			'load'	=> 'Open+Sans' 
 		),
 		'oxygen' => array( 
-			'label'	=> 'Oxygen', 
+			'label'	=> __( 'Oxygen', 'swt-jat' ),
 			'css'	=> "'Oxygen', sans-serif", 
 			'load'	=> 'Oxygen' 
 		),
-		'playfair-display' => array( 
-			'label'	=> 'Playfair Display', 
+		'playfair-display' => array(
+			'label'	=> __( 'Playfair Display', 'swt-jat' ),
 			'css'	=> "'Playfair Display', serif", 
 			'load'	=> 'Playfair+Display' 
 		),
 		'poppins' => array( 
-			'label'	=> 'Poppins', 
+			'label'	=> __( 'Poppins', 'swt-jat' ),
 			'css'	=> "'Poppins', sans-serif", 
 			'load'	=> 'Poppins' 
 		),
 		'questrial' => array( 
-			'label'	=> 'Questrial', 
+			'label'	=> __( 'Questrial', 'swt-jat' ),
 			'css'	=> "'Questrial', sans-serif", 
 			'load'	=> 'Questrial' 
 		),
 		'quicksand' => array( 
-			'label'	=> 'Quicksand', 
+			'label'	=> __( 'Quicksand', 'swt-jat' ),
 			'css'	=> "'Quicksand', sans-serif", 
 			'load'	=> 'Quicksand' 
 		),
 		'raleway' => array( 
-			'label'	=> 'Raleway', 
+			'label'	=> __( 'Raleway', 'swt-jat' ),
 			'css'	=> "'Raleway', sans-serif", 
 			'load'	=> 'Raleway' 
 		),
 		'rhodium-libre' => array( 
-			'label'	=> 'Rhodium Libre', 
+			'label'	=> __( 'Rhodium Libre', 'swt-jat' ),
 			'css'	=> "'Rhodium Libre', serif", 
 			'load '	=> 'Rhodium+Libre' 
 		),
 		'roboto' => array( 
-			'label'	=> 'Roboto', 
+			'label'	=> __( 'Roboto', 'swt-jat' ),
 			'css'	=> "'Roboto', sans-serif", 
 			'load'	=> 'Roboto' 
 		),
 		'roboto-slab' => array( 
-			'label'	=> 'Roboto Slab', 
+			'label'	=> __( 'Roboto Slab', 'swt-jat' ),
 			'css'	=> "'Roboto Slab', serif", 
 			'load'	=> 'Roboto+Slab:300' 
 		),
-		'rosarivo' => array( 
-			'label'	=> 'Rosarivo', 
+		'rosarivo' => array(
+			'label'	=> __( 'Rosarivo', 'swt-jat' ),
 			'css'	=> "'Rosarivo', serif", 
 			'load'	=> 'Rosarivo' 
 		),
 		'ruda' => array( 
-			'label'	=> 'Ruda', 
+			'label'	=> __( 'Ruda', 'swt-jat' ),
 			'css'	=> "'Ruda', sans-serif", 
 			'load'	=> 'Ruda' 
 		),
 		'sarala' => array( 
-			'label'	=> 'Sarala', 
+			'label'	=> __( 'Sarala', 'swt-jat' ),
 			'css'	=> "'Sarala', sans-serif", 
 			'load'	=> 'Sarala' 
 		),
 		'sintony' => array( 
-			'label'	=> 'Sintony', 
+			'label'	=> __( 'Sintony', 'swt-jat' ),
 			'css'	=> "'Sintony', sans-serif", 
 			'load'	=> 'Sintony' 
 		),
 		'slabo=13px' => array( 
-			'label'	=> 'Slabo 13px', 
+			'label'	=> __( 'Slabo 13px', 'swt-jat' ),
 			'css'	=> "'Slabo 13px', serif", 
 			'load'	=> 'Slabo+13px' 
 		),
 		'titillium-web' => array( 
-			'label'	=> 'Titillium Web', 
+			'label'	=> __( 'Titillium Web',  'swt-jat' ),
 			'css'	=> "'Titillium Web', sans-serif", 
 			'load'	=> 'Titillium+Web' 
 		),
 		'ubuntu' => array( 
-			'label'	=> 'Ubuntu', 
+			'label'	=> __( 'Ubuntu',  'swt-jat' ),
 			'css'	=> "'Ubuntu', sans-serif", 
 			'load'	=> 'Ubuntu' 
 		),
-		'work-sans' => array( 
-			'label'	=> 'Work Sans', 
+		'work-sans' => array(
+			'label'	=> __( 'Work Sans',  'swt-jat' ),
 			'css'	=> "'Work Sans', sans-serif", 
 			'load'	=> 'Work+Sans' 
 		)
@@ -556,132 +615,132 @@ function swt_jat_get_header_fonts()
 {
 	return apply_filters( 'swt-jat-header-fonts', array(
 		'amita' => array( 
-			'label'	=> 'Amita', 
+			'label'	=> __( 'Amita', 'swt-jat' ),
 			'css'	=> "'Amita', cursive", 
 			'load'	=> 'Amita' 
 		),
 		'Anonymous Pro' => array( 
-			'label'	=> 'Anonymous Pro', 
+			'label'	=> __( 'Anonymous Pro', 'swt-jat' ),
 			'css'	=> "'Anonymous Pro', monospace", 
 			'load'	=> 'Anonymous+Pro' 
 		),
 		'arima-madurai' => array( 
-			'label'	=> 'Arima Madurai', 
+			'label'	=> __( 'Arima Madurai', 'swt-jat' ),
 			'css'	=> "'Arima Madurai', cursive", 
 			'load'	=> 'Arima+Madurai' 
 		),
 		'delius' => array( 
-			'label'	=> 'Delius', 
+			'label'	=> __( 'Delius', 'swt-jat' ),
 			'css'	=> "'Delius', cursive", 
 			'load'	=> 'Delius' 
 		),
 		'delius-swash-caps' => array( 
-			'label'	=> 'Delius Swash Caps', 
+			'label'	=> __( 'Delius Swash Caps', 'swt-jat' ),
 			'css'	=> "'Delius Swash Caps', cursive", 
 			'load'	=> 'Delius+Swash+Caps' 
 		),
 		'elsie-swash-caps' => array(
-			'label'	=> 'Elsie Swash Caps', 
+			'label'	=> __( 'Elsie Swash Caps', 'swt-jat' ),
 			'css'	=> "'Elsie Swash Caps', cursive", 
 			'load'	=> 'Elsie+Swash+Caps' 
 		),
 		'englebert' => array( 
-			'label'	=> 'Englebert', 
+			'label'	=> __( 'Englebert', 'swt-jat' ),
 			'css'	=> "'Englebert', sans-serif", 
 			'load'	=> 'Englebert' 
 		),
-		'forum' => array( 
-			'label'	=> 'Forum', 
+		'forum' => array(
+			'label'	=> __( 'Forum', 'swt-jat' ),
 			'css'	=> "'Forum', cursive", 
 			'load'	=> 'Forum' 
 		),
 		'handlee' => array(
-			'label'	=> 'Handlee', 
+			'label'	=> __( 'Handlee', 'swt-jat' ),
 			'css'	=> "'Handlee', cursive", 
 			'load'	=> 'Handlee' 
 		),
 		'happy-monkey' => array( 
-			'label'	=> 'Happy Monkey', 
+			'label'	=> __( 'Happy Monkey', 'swt-jat' ),
 			'css'	=> "'Happy Monkey', cursive", 
 			'load'	=> 'Happy+Monkey' 
 		),
 		'kalam' => array( 
-			'label'	=> 'Kalam', 
+			'label'	=> __( 'Kalam', 'swt-jat' ),
 			'css'	=> "'Kalam', cursive", 
 			'load'	=> 'Kalam' 
 		),
 		'kotta-one' => array(
-			'label'	=> 'Kotta One', 
+			'label'	=> __( 'Kotta One', 'swt-jat' ),
 			'css'	=> "'Kotta One', serif", 
 			'load'	=> 'Kotta+One' 
 		),
 		'mate-sc' => array( 
-			'label'	=> 'Mate SC', 
+			'label'	=> __( 'Mate SC', 'swt-jat' ),
 			'css'	=> "'Mate SC', serif", 
 			'load'	=> 'Mate+SC' 
 		),
 		'neucha' => array( 
-			'label'	=> 'Neucha', 
+			'label'	=> __( 'Neucha', 'swt-jat' ),
 			'css'	=> "'Neucha', cursive", 
 			'load'	=> 'Neucha' 
 		),
-		'old-standard-tt' => array( 
-			'label'	=> 'Old Standard TT', 
+		'old-standard-tt' => array(
+			'label'	=> __( 'Old Standard TT', 'swt-jat' ),
 			'css'	=> "'Old Standard TT', serif", 
 			'load'	=> 'Old+Standard+TT:400i' 
 		),
 		'oldenburg' => array( 
-			'label'	=> 'Oldenburg', 
+			'label'	=> __( 'Oldenburg', 'swt-jat' ),
 			'css'	=> "'Oldenburg', cursive", 
 			'load'	=> 'Oldenburg' 
 		),
 		'oswald' => array( 
-			'label'	=> 'Oswald', 
+			'label'	=> __( 'Oswald', 'swt-jat' ),
 			'css'	=> "'Oswald', sans-serif", 
 			'load'	=> 'Oswald' 
 		),
 		'paprika' => array( 
-			'label'	=> 'Paprika', 
+			'label'	=> __( 'Paprika', 'swt-jat' ),
 			'css'	=> "'Paprika', cursive", 
 			'load'	=> 'Paprika' 
 		),
 		'petit-formal-script' => array( 
-			'label'	=> 'Petit Formal Script', 
+			'label'	=> __( 'Petit Formal Script', 'swt-jat' ),
 			'css'	=> "'Petit Formal Script', cursive", 
 			'load'	=> 'Petit+Formal+Script'
 		),
 		'schoolbell' => array( 
-			'label'	=> 'Schoolbell', 
+			'label'	=> __( 'Schoolbell', 'swt-jat' ),
 			'css'	=> "'Schoolbell', cursive", 
 			'load'	=> 'Schoolbell' 
 		),
 		'simonetta' => array( 
-			'label'	=> 'Simonetta', 
+			'label'	=> __( 'Simonetta', 'swt-jat' ),
 			'css'	=> "'Simonetta', cursive", 
 			'load'	=> 'Simonetta' 
 		),
 		'sofia' => array( 
-			'label'	=> 'Sofia', 
+			'label'	=> __( 'Sofia', 'swt-jat' ),
 			'css'	=> "'Sofia', cursive", 
 			'load'	=> 'Sofia' 
 		),
 		'special-elite' => array( 
-			'label'	=> 'Special Elite', 
+			'label'	=> __( 'Special Elite', 'swt-jat' ),
 			'css'	=> "'Special Elite', cursive", 
 			'load'	=> 'Special+Elite' 
 		),
 		'stint-ultra-expanded' => array( 
-			'label'	=> 'Stint Ultra Expanded', 
+			'label'	=> __( 'Stint Ultra Expanded', 'swt-jat' ),
 			'css'	=> "'Stint Ultra Expanded', cursive", 
 			'load'	=> 'Stint+Ultra+Expanded' 
 		),
 		'tillana' => array( 
-			'label'	=> 'Tillana', 
+			'label'	=> __( 'Tillana', 'swt-jat' ),
 			'css'	=> "'Tillana', cursive", 
 			'load'	=> 'Tillana' 
 		),
 		'unkempt' => array( 
-			'label'	=> 'Unkempt', 
+			'label'	=> __( 'Unkempt', 'swt-jat' ),
 			'css'	=> "'Unkempt', cursive", 
 			'load'	=> 'Unkempt' 
 		),
