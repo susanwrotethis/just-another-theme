@@ -1,0 +1,159 @@
+/**
+ * CSS for Emerald color scheme presets.
+ *
+ * @package just-another-theme
+ */
+
+body,
+.color-section,
+.color-section.menu ul {
+	background-color: #173602; 
+}
+
+a {
+	color: #284d0f;
+}
+
+a:hover, 
+a:focus, 
+a:active {
+	color: #4c3d00;
+}
+
+.gobutton,
+.gobutton:visited,
+.page-links a,
+.page-links a:visited,
+.post-navigation a,
+.post-navigation a:visited,
+.posts-navigation a,
+.posts-navigation a:visited,
+.reply a,
+.reply a:visited, 
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #7a654a;
+}
+
+.gobutton:hover,
+.gobutton:focus,
+.gobutton:active,
+.page-links a:hover,
+.page-links a:focus,
+.page-links a:active,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.post-navigation a:active,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:active,
+.reply a:hover,
+.reply a:focus,
+.reply a:active,
+button:hover,
+button:active, 
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	background-color: #6f5c3f;
+}
+
+blockquote,
+.main-navigation-content {
+	border-color: #99845c;
+}
+
+h2,
+.sidebar-primary .widget-title,
+.sidebar-bottom .widget-title,
+.blog .entry-title,
+.archive .entry-title,
+.search-results .entry-title {
+	color: #2d3329;
+}
+
+h3:before {
+	color: #99845c;
+}
+
+h4,
+.em-color {
+	color: #173602;
+}
+
+hr {
+	background-color: #decdbd;
+}
+
+.sidebar-primary,
+.widgets-bottom {
+	border-color: #decdbd;
+}
+
+.blog article,
+.archive article, 
+.search-results article,
+.blog article:first-of-type,
+.archive article:first-of-type,
+.search-results article:first-of-type,
+.single .entry-meta,
+.single .entry-footer {
+	border-color: #ccbaa7;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea, 
+select {
+	border-color: #baa38c;
+}
+
+.comment-list .children {
+	border-color: #ab9a89;
+}
+
+.color-section input[type="text"],
+.color-section input[type="email"],
+.color-section input[type="url"],
+.color-section input[type="password"],
+.color-section input[type="search"],
+.color-section input[type="number"],
+.color-section input[type="tel"],
+.color-section input[type="range"],
+.color-section input[type="date"],
+.color-section input[type="month"],
+.color-section input[type="week"],
+.color-section input[type="time"],
+.color-section input[type="datetime"],
+.color-section input[type="datetime-local"],
+.color-section input[type="color"],
+.color-section textarea, 
+.color-section select {
+	background-color: #1e4008;
+}
+
+.widgets-footer .widget-title {
+	border-color: #99845c;
+}
