@@ -77,7 +77,7 @@ function swt_jat_setup()
 	if ( $google_fonts = get_option( 'swt-jat-gfont', '' ) ) {
 		add_editor_style( 'https://fonts.googleapis.com/css?family='.$google_fonts ); 
 	}
-	add_editor_style( 'editor-style.css' );
+	add_editor_style( get_template_directory_uri().'/editor-style.css' );
 	if ( 'none' != $skin = get_theme_mod( 'swt_jat_skin', 'none' ) ) {
 		add_editor_style( "css/$skin.css" );
 	}
@@ -222,10 +222,20 @@ add_action( 'wp_enqueue_scripts', 'swt_jat_scripts', 15 );
 
 // TINYMCE CUSTOMIZATION FUNCTIONS BEGIN HERE ////////////////////////////////////////////
 // Get custom font CSS from option and add to TinyMCE.
+// Also handles .gobutton class base style. Workaround for editor ignoring some styles.
 function swt_jat_add_font_styles( $mce ) 
 {
-    if ( !$styles = get_option( 'swt-jat-css', '' ) ) {
-    	return $mce;
+    // Fonts
+    $styles = get_option( 'swt-jat-css', '' );
+    
+    // Append the button style here; 
+    $styles .= '.gobutton,.gobutton:hover{border:1px solid rgba(0,0,0,.1);border-radius: 1px;color: #fff;display:inline-block;font-size:1rem;line-height:1.5;padding:10px 15px;text-decoration:none !important; -webkit-transition: all 1s;transition: all 1s;';
+    
+	// Add background color if no skin
+	if ( 'none' == $skin = get_theme_mod( 'swt_jat_skin', 'none' ) ) {
+    	$styles .= 'background-color:#464646;}.gobutton:hover{background-color:#333;}';
+    } else {
+    	$styles .= '}';
     }
 	
     if ( isset( $mce['content_style'] ) ) {
