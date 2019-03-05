@@ -4,7 +4,7 @@
  * @package just-another-theme
  */
 
-body,
+body.wp-template,
 .color-section,
 .color-section.menu ul {
 	background-color: #421e2c; 

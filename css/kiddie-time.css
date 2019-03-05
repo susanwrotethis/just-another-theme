@@ -28,7 +28,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #00756A;
+	background-color: #00756a;
 }
 
 .gobutton:hover,
@@ -89,31 +89,4 @@ h3:before {
 h4,
 .em-color {
 	color: #00756a;
-}
-
-.color-section .gobutton,
-.color-section .gobutton:visited,
-.color-section button,
-.color-section input[type="button"],
-.color-section input[type="reset"],
-.color-section input[type="submit"] {
-	background-color: #00756A;
-}
-
-.color-section .gobutton:hover,
-.color-section .gobutton:focus,
-.color-section .gobutton:active,
-.color-section button:hover,
-.color-section button:active, 
-.color-section button:focus,
-.color-section input[type="button"]:hover,
-.color-section input[type="button"]:active,
-.color-section input[type="button"]:focus,
-.color-section input[type="reset"]:hover,
-.color-section input[type="reset"]:active,
-.color-section input[type="reset"]:focus,
-.color-section input[type="submit"]:hover,
-.color-section input[type="submit"]:active,
-.color-section input[type="submit"]:focus {
-	background-color: #b56204;
 }

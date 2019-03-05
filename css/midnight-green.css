@@ -4,7 +4,7 @@
  * @package just-another-theme
  */
  
-body,
+body.wp-template,
 .color-section,
 .color-section.menu ul { 
 	background-color: #081e16;
@@ -157,4 +157,11 @@ h4,
 .widgets-footer .widget > div {
 	padding-right: 15px; 
 	padding-left: 15px;
+}
+
+/* Mobile and tablet portrait orientation */
+@media screen and (max-width: 770px) {
+	.widgets-footer .widget {
+		margin-bottom: 30px;
+	}
 }

@@ -4,7 +4,7 @@
  * @package just-another-theme
  */
 
-body,
+body.wp-template,
 .color-section,
 .color-section.menu ul { 
 	background-color: #372521;
@@ -183,4 +183,12 @@ select {
 
 .widgets-footer .widget-title {
 	border-color: #efb0a2;
+}
+
+/* Mobile and tablet portrait orientation */
+@media screen and (max-width: 770px) {
+	.sidebar-primary,
+	.bottom-content {
+		background-color: #f7f2eb;
+	}
 }
