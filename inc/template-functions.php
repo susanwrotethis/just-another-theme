@@ -19,6 +19,8 @@ add_action( 'wp_head', 'swt_jat_pingback_header' );
 // Add custom body classes.
 function swt_jat_body_classes( $classes ) 
 {
+	$classes[] = 'wp-template'; // Prevents skin body BG from being applied in the editor.
+	
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
