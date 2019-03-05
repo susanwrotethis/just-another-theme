@@ -120,3 +120,12 @@ Fixes Github URI data in style.css.
 * Sharpened the toggle menu image and added a dark version for light-colored skins.
 * Updated widget-title styles to make hidden titles available to screen readers.
 * Commented functions.php and customizer.php code.
+
+### 1.5.1
+
+* Added custom body class .wp-template and updated body background styles in all CSS files to specify body.wp-template. Workaround for an editor bug that was loading body background colors in the editor.
+* Updated a function to add inline editor styles to include a style for links with the class .gobutton. Workaround for an editor bug that was ignoring this style.
+* Made the copyright statement font smaller in mobile.
+* Adjusted the spacing of primary sidebar, bottom and footer widgets in mobile for consistency.
+* Adjusted the background shading of the primary sidebar and bottom widget area in mobile.
+* Adjusted the H2, H3 and H4 font sizes and line heights in mobile.
