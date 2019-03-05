@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a simple theme good for small business, organizational and personal sites. It is optimized for the DIY site owner with limited design experience. Made from Underscores.
-Version: 1.5
+Version: 1.5.1
 License: GPL v2 or later
 Text Domain: swt-jat
 Domain Path: /lang/
@@ -169,7 +169,7 @@ dfn, cite, em, i {
 
 blockquote {
 	border-left: 7px solid #666; font-style: italic;
-	margin: 1rem 25px 1rem 57px; padding-left: 25px;}
+	margin: 1rem 1rem 1rem 2rem; padding-left: 1rem;}
 
 address {
 	margin: 0 0 13px 0;}
@@ -194,7 +194,7 @@ big {
 	font-size: 1.1rem;}
 
 /* TYPOGRAPHY MEDIA QUERIES BEGIN HERE *******************************/
-/* Adjust for mobile screen sizes */
+/* Adjust for mobile screen and table portrait orientation sizes */
 @media screen and (max-width: 770px) {
 	
 	h2 {
@@ -208,7 +208,24 @@ big {
 		font-size: 1.2rem;}
 
 	blockquote {
-		margin: 1rem .5rem 1rem 1rem; padding-left: .5rem;}
+		margin: 1rem .5rem; padding-left: .7rem;}
+}
+
+/* Adjust for mobile screen sizes */
+@media screen and (max-width: 500px) {
+	
+	h2 {
+		font-size: 1.3rem; line-height: 1.3;}
+	
+	h3,
+	h3:before {
+		font-size: 1.2rem; line-height: 1.3;}
+	
+	h4 {
+		font-size: 1.1rem; line-height: 1.3;}
+		
+	blockquote {
+		margin: 1rem .2rem 15px .2rem;}
 }
 
 /* ELEMENT STYLES BEGIN HERE *****************************************/
@@ -282,7 +299,7 @@ a:active {
 .reply a,
 .reply a:visited {
 	background-color: #464646;
-	border: none;
+	border: 1px solid rgba(0,0,0,.1);
 	border-radius: 1px;
 	color: #fff;
 	display: inline-block;
@@ -1189,7 +1206,7 @@ ol.comment-list {
 	font-size: .82rem;}
 	
 /* DARK COLOR STYLES BEGIN HERE **************************************/
-body {
+body.wp-template {
 	background-color: #1f1f1f;}
 
 .color-section,
@@ -1482,7 +1499,6 @@ hr.thick {
 	.widgets-header .widget,
 	.no-description .widgets-header .widget {
 		display: block; margin-top: 15px; max-width: 100%; text-align: center; width: 100%;}
-		
 			
 	.swidget:nth-child(2n) ul,
 	.swidget:nth-child(2n+1) ul {
@@ -1537,24 +1553,46 @@ hr.thick {
 	
 	/* primary sidebar */
 	.sidebar-primary {
-		background-color: #f1f1f1; border: none; margin-bottom: 0; padding: 20px;}
+		background-color: #f1f1f1; border: none; margin-bottom: 0; padding: 30px 20px 40px 20px;}
+		
+	.sidebar-primary .widget {
+		margin-bottom: 40px;
+	}
 		
 	.sidebar-primary .widget:last-of-type {
 		margin-bottom: 0;}
+		
+	.sidebar-primary .widget-title {
+		font-size: 1.5rem;}
 		
 	/* bottom widget area */
 	.bottom-content {
 		background-color: #f1f1f1;}
 	
 	.widgets-bottom {
-		border: none; margin: 0; padding-bottom: 20px;}
+		border: none; margin: 0; padding: 30px 20px 40px 20px;}
+		
+	.sidebar-primary + .bottom-content .widgets-bottom {
+		padding-top: 0;}
+	
+	.widgets-bottom .widget {
+		margin: 0 0 40px 0;}
 		
 	.widgets-bottom .widget:last-of-type {
-		margin-bottom: 0; padding-bottom: 25px;}
+		margin-bottom: 0;}
 		
 	/* footer */
+	.widgets-footer .widget {
+		margin-bottom: 40px;}
+	
 	.site-copyright {
-		padding-top: 35px;}
+		font-size: .8rem;}
+		
+	.advanced-footer .site-copyright {
+		margin-top: 0;}
+		
+	.basic-footer .site-footer {
+		padding: 20px 0;}
 	
 	/* page */
 	.page-title {
@@ -1576,4 +1614,7 @@ hr.thick {
 @media screen and (max-width: 500px) {
 	.site-logo {
 		padding: 30px 0;}
+		
+	.sidebar-primary .widget-title {
+		font-size: 1.3rem; line-height: 1.3;}
 }
