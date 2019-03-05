@@ -108,16 +108,6 @@ a:focus,
 a:active {
 	text-decoration: underline;}
 
-a:focus {
-	outline: thin dotted;}
-
-a:hover {
-	-webkit-transition: all 1s; transition: all 1s;}
-
-a:hover, 
-a:active {
-	outline: 0;}
-
 .em-color {
 	color: #000; font-weight: bold;}
 
@@ -141,5 +131,3 @@ a:active {
 
 hr.thick {
 	height: 4px; margin: 13px 0;}
-
-body {background: #fff !important;} /* override skin css */
