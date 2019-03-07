@@ -134,3 +134,7 @@ Fixes Github URI data in style.css.
 
 * Increased the line height for the menu, pages, archives, category and meta widgets lists.
 * Adjusted the link styles for primary sidebar and bottom widget area links.
+
+### 1.5.3
+
+* Adjusted the blockquote margins and the padding for footer widget content.
