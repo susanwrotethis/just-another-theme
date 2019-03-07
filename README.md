@@ -129,3 +129,8 @@ Fixes Github URI data in style.css.
 * Adjusted the spacing of primary sidebar, bottom and footer widgets in mobile for consistency.
 * Adjusted the background shading of the primary sidebar and bottom widget area in mobile.
 * Adjusted the H2, H3 and H4 font sizes and line heights in mobile.
+
+### 1.5.2
+
+* Increased the line height for the menu, pages, archives, category and meta widgets lists.
+* Adjusted the link styles for primary sidebar and bottom widget area links.
