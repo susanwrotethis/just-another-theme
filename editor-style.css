@@ -39,7 +39,7 @@ dfn, cite, em, i {
 
 blockquote {
 	border-left: 7px solid #666; font-style: italic;
-	margin: 1rem 25px 1rem 57px; padding-left: 25px;}
+	margin: 1.1rem 1.5em 1.1rem .75rem; padding-left: 1rem;}
 
 address {
 	margin: 0 0 13px 0;}
@@ -131,3 +131,6 @@ a:active {
 
 hr.thick {
 	height: 4px; margin: 13px 0;}
+	
+blockquote.bigblock {
+	font-size: 1.3em;}

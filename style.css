@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a simple theme good for small business, organizational and personal sites. It is optimized for the DIY site owner with limited design experience. Made from Underscores.
-Version: 1.5.2
+Version: 1.5.3
 License: GPL v2 or later
 Text Domain: swt-jat
 Domain Path: /lang/
@@ -169,7 +169,7 @@ dfn, cite, em, i {
 
 blockquote {
 	border-left: 7px solid #666; font-style: italic;
-	margin: 1rem 1rem 1rem 2rem; padding-left: 1rem;}
+	margin: 1.1rem 1.5em 1.1rem .75rem; padding-left: 1rem;}
 
 address {
 	margin: 0 0 13px 0;}
@@ -208,7 +208,7 @@ big {
 		font-size: 1.2rem;}
 
 	blockquote {
-		margin: 1rem .5rem; padding-left: .7rem;}
+		margin: 1rem 0; padding-left: 1rem;}
 }
 
 /* Adjust for mobile screen sizes */
@@ -223,9 +223,6 @@ big {
 	
 	h4 {
 		font-size: 1.1rem; line-height: 1.3;}
-		
-	blockquote {
-		margin: 1rem .2rem 15px .2rem;}
 }
 
 /* ELEMENT STYLES BEGIN HERE *****************************************/
@@ -1002,7 +999,7 @@ object {
 .widgets-footer .widget > form,
 .widgets-footer .widget > table,
 .widgets-footer .widget > div {
-	padding-left: 4px; padding-right: 4px;}
+	padding-left: 2px; padding-right: 2px;}
 
 /* MULTI-COLUMN WIDGET STYLES BEGIN HERE *****************************/
 .widgets-cols {
@@ -1319,6 +1316,9 @@ body.wp-template {
 
 hr.thick {
 	height: 4px; margin: 13px 0;}
+	
+blockquote.bigblock {
+	font-size: 1.3em;}
 
 /* DESKTOP MEDIA QUERIES BEGIN HERE **********************************/
 /* Adjust for desktop screen sizes */
