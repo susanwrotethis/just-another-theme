@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a simple theme good for small business, organizational and personal sites. It is optimized for the DIY site owner with limited design experience. Made from Underscores.
-Version: 1.5.1
+Version: 1.5.2
 License: GPL v2 or later
 Text Domain: swt-jat
 Domain Path: /lang/
@@ -820,7 +820,9 @@ object {
 .widget_archive ul,
 .widget_categories ul,
 .widget_meta ul,
+.widget_nav_menu ul,
 .widget_pages ul,
+.widget_recent_entries ul,
 .widget_rss ul {
 	list-style: none; margin: 0; padding: 0;}
 
@@ -850,13 +852,39 @@ object {
 	display: block; margin-bottom: .3rem;}
 
 /* BODY-STYLE WIDGET STYLES BEGIN HERE *******************************/
-.widgets-body-style a,
-.widgets-body-style a:visited {
+.widgets-body-style .widget_archive li,
+.widgets-body-style .widget_categories li,
+.widgets-body-style .widget_meta li,
+.widgets-body-style .widget_nav_menu li,
+.widgets-body-style .widget_pages li,
+.widgets-body-style .widget_recent_entries li {
+	line-height: 1.7;}
+	
+.widgets-body-style .widget_archive a,
+.widgets-body-style .widget_categories a,
+.widgets-body-style .widget_meta a,
+.widgets-body-style .widget_nav_menu a,
+.widgets-body-style .widget_pages a,
+.widgets-body-style .widget_recent_entries a,
+.widgets-body-style .widget_rss .widget-title a,
+.widgets-body-style .widget_tag_cloud a {
 	color: inherit; text-decoration: none;}
+	
+.widgets-body-style .widget_archive a:hover,
+.widgets-body-style .widget_categories a:hover,
+.widgets-body-style .widget_meta a:hover,
+.widgets-body-style .widget_nav_menu a:hover,
+.widgets-body-style .widget_pages a:hover,
+.widgets-body-style .widget_recent_entries a:hover,
+.widgets-body-style .widget_rss .widget-title a:hover,
+.widgets-body-style .widget_tag_cloud a:hover {
+	text-decoration: underline;}
 
-.widgets-body-style a:hover,
-.widgets-body-style a:focus,
-.widgets-body-style a:active {
+.widgets-body-style .widget_calendar a {
+	text-decoration: none;}
+	
+.widgets-body-style .widget_text a,
+.widgets-body-style .widget_custom_html a {
 	text-decoration: underline;}
 
 .widgets-body-style .gobutton,
