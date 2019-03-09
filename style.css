@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a simple theme good for small business, organizational and personal sites. It is optimized for the DIY site owner with limited design experience. Made from Underscores.
-Version: 1.5.3
+Version: 1.5.4
 License: GPL v2 or later
 Text Domain: swt-jat
 Domain Path: /lang/
@@ -62,7 +62,7 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit; font-size: 1rem; line-height: 1.15; margin: 0;}
+	font-family: inherit; font-size: 1rem; margin: 0;}
 
 button,
 input {
@@ -99,9 +99,6 @@ legend {
 
 progress {
 	vertical-align: baseline;}
-
-textarea {
-	overflow: auto;}
 
 [type="checkbox"],
 [type="radio"] {
@@ -141,6 +138,15 @@ optgroup,
 textarea {
 	color: #333; font-family: Arial, Helvetica, sans-serif; font-size: 1rem;
 	line-height: 1.5;}
+	
+button,
+input,
+select,
+optgroup {
+	line-height: 1;}
+	
+textarea {
+	line-height: 1.4; overflow: auto;}
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both; font-family: 'Times New Roman', Times, serif; font-weight: bold;
@@ -301,8 +307,8 @@ a:active {
 	color: #fff;
 	display: inline-block;
 	font-size: 1rem;
-	line-height: 1.5;
-	padding: 10px 15px;
+	line-height: 1;
+	padding: 7px 15px;
 	text-decoration: none !important;
 	-webkit-transition: all 1s;
 	transition: all 1s;}
@@ -331,8 +337,7 @@ input[type="submit"] {
 	border-radius: 1px;
 	color: #fff;
 	display: inline-block;
-	line-height: 1;
-	padding: 10px 15px;
+	padding: 7px 15px;
 	-webkit-transition: all 1s;
 	transition: all 1s;}
 
@@ -1398,7 +1403,7 @@ blockquote.bigblock {
 	
 	/* primary sidebar */
 	.sidebar-primary {
-		border-left: 2px solid #ddd; float: left; max-width: 33%; padding-top: 15px; 
+		border-left: 2px solid #ddd; float: left; margin-top: 15px; max-width: 33%; 
 		width: 33%;}
 	
 	.sidebar-primary .widget {
