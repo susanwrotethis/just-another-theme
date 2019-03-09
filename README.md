@@ -138,3 +138,8 @@ Fixes Github URI data in style.css.
 ### 1.5.3
 
 * Adjusted the blockquote margins and the padding for footer widget content.
+
+### 1.5.4
+
+* Adjusted line heights of form fields and button links.
+* Updated the toggle button images.
