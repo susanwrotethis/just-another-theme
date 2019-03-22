@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Just Another Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-04 02:08+0000\n"
+"POT-Creation-Date: 2019-03-22 20:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,102 +13,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.0; wp-5.1"
+"X-Loco-Version: 2.2.1; wp-5.1.1"
 
 #. used between list items, there is a space after the comma
 #: inc/content-functions.php:49
 msgid ", "
 msgstr ""
 
-#: inc/customizer.php:411
+#: inc/customizer.php:455
 msgid "404 page"
 msgstr ""
 
-#: inc/customizer.php:35
+#: inc/customizer.php:37
 msgid "Add your name to the copyright statement."
 msgstr ""
 
-#: inc/customizer.php:386
+#: inc/customizer.php:418
 msgid "Amethyst"
 msgstr ""
 
-#: inc/customizer.php:607
+#: inc/customizer.php:651
 msgid "Amita"
 msgstr ""
 
-#: inc/customizer.php:612
+#: inc/customizer.php:656
 msgid "Anonymous Pro"
 msgstr ""
 
-#: inc/customizer.php:430
+#: inc/customizer.php:474
 msgid "Antic Slab"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:104
 msgid ""
 "Appears at the page top. For social media or custom links. Only one widget "
 "is displayed, and the title is hidden by default."
 msgstr ""
 
-#: functions.php:150
+#: functions.php:134
 msgid "Appears below the main content of a page. Three-column layout."
 msgstr ""
 
-#: functions.php:130
+#: functions.php:114
 msgid ""
 "Appears below the main navigation. For sliders and large images. Widget "
 "titles are hidden by default."
 msgstr ""
 
-#: functions.php:140
+#: functions.php:124
 msgid "Appears in pages using the two-column template."
 msgstr ""
 
-#: functions.php:160
+#: functions.php:144
 msgid "Appears in the footer. Three-column layout."
 msgstr ""
 
-#: inc/customizer.php:111
+#: inc/customizer.php:118
 msgid "Apply Font Smoothing"
 msgstr ""
 
-#: inc/customizer.php:617
+#: inc/customizer.php:661
 msgid "Arima Madurai"
 msgstr ""
 
-#: inc/customizer.php:435
+#: inc/customizer.php:479
 msgid "Armata"
 msgstr ""
 
-#: inc/customizer.php:409
+#: inc/customizer.php:453
 msgid "blog archive pages"
 msgstr ""
 
-#: inc/customizer.php:408
+#: inc/customizer.php:452
 msgid "blog page"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:419
 msgid "Blue"
 msgstr ""
 
-#: inc/customizer.php:75
+#: inc/customizer.php:81
 msgid "Body Font"
 msgstr ""
 
-#: inc/customizer.php:388
+#: inc/customizer.php:420
 msgid "Burnt Orange"
 msgstr ""
 
-#: inc/customizer.php:389
+#: inc/customizer.php:421
 msgid "Chocolate"
 msgstr ""
 
-#: inc/customizer.php:112
+#: inc/customizer.php:119
 msgid "Choose Yes if header or footer text looks too bold."
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:58
 msgid "Color Scheme"
 msgstr ""
 
@@ -135,39 +135,43 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:422
 msgid "Deep Red"
 msgstr ""
 
-#: inc/customizer.php:385
+#: inc/customizer.php:49
 msgid "Default (Black and White)"
 msgstr ""
 
-#: inc/customizer.php:420
+#: inc/customizer.php:464
 msgid "Default Sans-Serif"
 msgstr ""
 
-#: inc/customizer.php:425
+#: inc/customizer.php:469
 msgid "Default Serif"
 msgstr ""
 
-#: inc/customizer.php:622
+#: inc/customizer.php:666
 msgid "Delius"
 msgstr ""
 
-#: inc/customizer.php:627
+#: inc/customizer.php:671
 msgid "Delius Swash Caps"
 msgstr ""
 
-#: inc/customizer.php:391
+#: inc/customizer.php:423
 msgid "Denim Blue"
 msgstr ""
 
-#: inc/customizer.php:42
+#: inc/customizer.php:44
 msgid "Design Elements"
 msgstr ""
 
-#: inc/customizer.php:440
+#: inc/customizer.php:439
+msgid "Diamond"
+msgstr ""
+
+#: inc/customizer.php:484
 msgid "Duru Sans"
 msgstr ""
 
@@ -177,71 +181,91 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/customizer.php:632
+#: inc/customizer.php:676
 msgid "Elsie Swash Caps"
 msgstr ""
 
-#: inc/customizer.php:392
+#: inc/customizer.php:424
 msgid "Emerald"
 msgstr ""
 
-#: inc/customizer.php:637
+#: inc/customizer.php:681
 msgid "Englebert"
 msgstr ""
 
-#: inc/customizer.php:393
+#: inc/customizer.php:425
 msgid "Espresso"
 msgstr ""
 
-#: inc/customizer.php:185
+#: inc/customizer.php:209
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:445
+#: inc/customizer.php:489
 msgid "Exo"
 msgstr ""
 
-#: inc/customizer.php:450
+#: inc/customizer.php:494
 msgid "Fauna One"
 msgstr ""
 
-#: functions.php:158
+#: inc/customizer.php:441
+msgid "Flower"
+msgstr ""
+
+#: comments.php:50
+msgid "Following Comments"
+msgstr ""
+
+#: single.php:23
+msgid "Following Post"
+msgstr ""
+
+#: index.php:39 archive.php:40
+msgid "Following Posts"
+msgstr ""
+
+#: functions.php:142
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:686
 msgid "Forum"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:210
 msgid "Full Post"
 msgstr ""
 
-#: inc/customizer.php:455
+#: inc/customizer.php:499
 msgid "Georgia"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:504
 msgid "Glegoo"
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:691
 msgid "Handlee"
 msgstr ""
 
-#: inc/customizer.php:652
+#: inc/customizer.php:696
 msgid "Happy Monkey"
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer.php:104
 msgid "Header Font"
 msgstr ""
 
-#: inc/customizer.php:465
+#: inc/customizer.php:438
+msgid "Heart"
+msgstr ""
+
+#: inc/customizer.php:509
 msgid "Heebo"
 msgstr ""
 
-#: inc/customizer.php:23
+#: inc/customizer.php:24
 msgid "Hide the site description."
 msgstr ""
 
@@ -249,11 +273,11 @@ msgstr ""
 msgid "home page"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:136
 msgid "Home page title is hidden by default."
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:105
 msgid ""
 "If a body font is selected for the header, it will be applied to all headers."
 " Display fonts will be applied to the site title, page title, widget titles "
@@ -272,7 +296,7 @@ msgid ""
 "from the "
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:204
 msgid "Index Page Content"
 msgstr ""
 
@@ -282,7 +306,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: inc/customizer.php:470
+#: inc/customizer.php:514
 msgid "Junge"
 msgstr ""
 
@@ -297,15 +321,15 @@ msgid ""
 "design experience. Made from Underscores."
 msgstr ""
 
-#: inc/customizer.php:657
+#: inc/customizer.php:701
 msgid "Kalam"
 msgstr ""
 
-#: inc/customizer.php:394
+#: inc/customizer.php:426
 msgid "Kiddie Time"
 msgstr ""
 
-#: inc/customizer.php:662
+#: inc/customizer.php:706
 msgid "Kotta One"
 msgstr ""
 
@@ -315,39 +339,39 @@ msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: inc/customizer.php:475
+#: inc/customizer.php:519
 msgid "Lora"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:170
 msgid "Main Navigation Width"
 msgstr ""
 
-#: inc/customizer.php:480
+#: inc/customizer.php:524
 msgid "Martel"
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:529
 msgid "Martel Sans"
 msgstr ""
 
-#: inc/customizer.php:667
+#: inc/customizer.php:711
 msgid "Mate SC"
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:534
 msgid "Merriweather"
 msgstr ""
 
-#: inc/customizer.php:495
+#: inc/customizer.php:539
 msgid "Merriweather Sans"
 msgstr ""
 
-#: inc/customizer.php:395
+#: inc/customizer.php:427
 msgid "Midnight Green"
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:544
 msgid "Montserrat"
 msgstr ""
 
@@ -355,28 +379,32 @@ msgstr ""
 msgid "More Results"
 msgstr ""
 
-#: inc/customizer.php:34
+#: inc/customizer.php:36
 msgid "Name for Copyright"
 msgstr ""
 
-#: inc/customizer.php:672
+#: inc/customizer.php:716
 msgid "Neucha"
 msgstr ""
 
-#: inc/customizer.php:116 inc/customizer.php:134 inc/customizer.php:151
-#: inc/customizer.php:168
+#: inc/customizer.php:123 inc/customizer.php:140 inc/customizer.php:175
+#: inc/customizer.php:192
 msgid "No"
 msgstr ""
 
-#: inc/customizer.php:505
+#: inc/customizer.php:549
 msgid "Nobile"
 msgstr ""
 
-#: inc/customizer.php:677
+#: inc/customizer.php:442
+msgid "None"
+msgstr ""
+
+#: inc/customizer.php:721
 msgid "Old Standard TT"
 msgstr ""
 
-#: inc/customizer.php:682
+#: inc/customizer.php:726
 msgid "Oldenburg"
 msgstr ""
 
@@ -394,7 +422,7 @@ msgstr ""
 msgid "Oops! We couldn't find anything."
 msgstr ""
 
-#: inc/customizer.php:510
+#: inc/customizer.php:554
 msgid "Open Sans"
 msgstr ""
 
@@ -404,11 +432,11 @@ msgid ""
 "bookmark."
 msgstr ""
 
-#: inc/customizer.php:687
+#: inc/customizer.php:731
 msgid "Oswald"
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:559
 msgid "Oxygen"
 msgstr ""
 
@@ -417,23 +445,23 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: inc/customizer.php:692
+#: inc/customizer.php:736
 msgid "Paprika"
 msgstr ""
 
-#: inc/customizer.php:396
+#: inc/customizer.php:428
 msgid "Pearl"
 msgstr ""
 
-#: inc/customizer.php:697
+#: inc/customizer.php:741
 msgid "Petit Formal Script"
 msgstr ""
 
-#: inc/customizer.php:55
+#: inc/customizer.php:59
 msgid "Pick a color scheme to start your design."
 msgstr ""
 
-#: inc/customizer.php:520
+#: inc/customizer.php:564
 msgid "Playfair Display"
 msgstr ""
 
@@ -441,11 +469,11 @@ msgstr ""
 msgid "Please try the following:"
 msgstr ""
 
-#: inc/customizer.php:397
+#: inc/customizer.php:429
 msgid "Plum"
 msgstr ""
 
-#: inc/customizer.php:525
+#: inc/customizer.php:569
 msgid "Poppins"
 msgstr ""
 
@@ -463,7 +491,7 @@ msgctxt "post date"
 msgid "on %s"
 msgstr ""
 
-#: functions.php:148
+#: functions.php:132
 msgid "Post-Content Widgets"
 msgstr ""
 
@@ -473,15 +501,27 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:112
 msgid "Pre-Content Widgets"
+msgstr ""
+
+#: comments.php:49
+msgid "Preceding Comments"
+msgstr ""
+
+#: single.php:22
+msgid "Preceding Post"
+msgstr ""
+
+#: index.php:38 archive.php:39
+msgid "Preceding Posts"
 msgstr ""
 
 #: search.php:42
 msgid "Previous Results"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:70
 msgid "Primary"
 msgstr ""
 
@@ -489,23 +529,23 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:138 inc/customizer.php:192
+#: functions.php:122 inc/customizer.php:216
 msgid "Primary Sidebar"
 msgstr ""
 
-#: inc/customizer.php:202
+#: inc/customizer.php:227
 msgid "Primary Sidebar Width"
 msgstr ""
 
-#: inc/customizer.php:530
+#: inc/customizer.php:574
 msgid "Questrial"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:579
 msgid "Quicksand"
 msgstr ""
 
-#: inc/customizer.php:540
+#: inc/customizer.php:584
 msgid "Raleway"
 msgstr ""
 
@@ -516,35 +556,35 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/customizer.php:545
+#: inc/customizer.php:589
 msgid "Rhodium Libre"
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:594
 msgid "Roboto"
 msgstr ""
 
-#: inc/customizer.php:555
+#: inc/customizer.php:599
 msgid "Roboto Slab"
 msgstr ""
 
-#: inc/customizer.php:560
+#: inc/customizer.php:604
 msgid "Rosarivo"
 msgstr ""
 
-#: inc/customizer.php:565
+#: inc/customizer.php:609
 msgid "Ruda"
 msgstr ""
 
-#: inc/customizer.php:570
+#: inc/customizer.php:614
 msgid "Sarala"
 msgstr ""
 
-#: inc/customizer.php:702
+#: inc/customizer.php:746
 msgid "Schoolbell"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:454
 msgid "search page"
 msgstr ""
 
@@ -554,31 +594,39 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:156
+msgid "Select an accent or choose None."
+msgstr ""
+
+#: inc/customizer.php:155
+msgid "Set H3 Style"
+msgstr ""
+
+#: inc/customizer.php:171
 msgid "Set nav bar to full page width."
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:188
 msgid "Set Pre-Content Widgets area to full page width."
 msgstr ""
 
-#: inc/customizer.php:181
+#: inc/customizer.php:205
 msgid "Show excerpt or full post on index and archive pages."
 msgstr ""
 
-#: inc/customizer.php:129
+#: inc/customizer.php:135
 msgid "Show Home Page Title"
 msgstr ""
 
-#: inc/customizer.php:707
+#: inc/customizer.php:751
 msgid "Simonetta"
 msgstr ""
 
-#: inc/customizer.php:407
+#: inc/customizer.php:451
 msgid "single post pages"
 msgstr ""
 
-#: inc/customizer.php:575
+#: inc/customizer.php:619
 msgid "Sintony"
 msgstr ""
 
@@ -586,11 +634,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer.php:580
+#: inc/customizer.php:624
 msgid "Slabo 13px"
 msgstr ""
 
-#: inc/customizer.php:712
+#: inc/customizer.php:756
 msgid "Sofia"
 msgstr ""
 
@@ -600,11 +648,19 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: inc/customizer.php:717
+#: inc/customizer.php:761
 msgid "Special Elite"
 msgstr ""
 
-#: inc/customizer.php:722
+#: inc/customizer.php:440
+msgid "Square"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid "Star"
+msgstr ""
+
+#: inc/customizer.php:766
 msgid "Stint Ultra Expanded"
 msgstr ""
 
@@ -614,7 +670,7 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/customizer.php:398
+#: inc/customizer.php:430
 msgid "Teal"
 msgstr ""
 
@@ -624,15 +680,15 @@ msgid ""
 "be temporarily unavailable."
 msgstr ""
 
-#: inc/customizer.php:727
+#: inc/customizer.php:771
 msgid "Tillana"
 msgstr ""
 
-#: inc/customizer.php:585
+#: inc/customizer.php:629
 msgid "Titillium Web"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:102
 msgid "Top Bar Widgets"
 msgstr ""
 
@@ -644,11 +700,11 @@ msgstr ""
 msgid "Two-Column Page"
 msgstr ""
 
-#: inc/customizer.php:590
+#: inc/customizer.php:634
 msgid "Ubuntu"
 msgstr ""
 
-#: inc/customizer.php:732
+#: inc/customizer.php:776
 msgid "Unkempt"
 msgstr ""
 
@@ -656,23 +712,23 @@ msgstr ""
 msgid "Untitled"
 msgstr ""
 
-#: inc/customizer.php:163
+#: inc/customizer.php:187
 msgid "Widget Area Width"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:228
 msgid "Width as a percentage of the content area. Default is 33."
 msgstr ""
 
-#: inc/customizer.php:595
+#: inc/customizer.php:639
 msgid "Work Sans"
 msgstr ""
 
-#: inc/customizer.php:117 inc/customizer.php:135 inc/customizer.php:152
-#: inc/customizer.php:169
+#: inc/customizer.php:124 inc/customizer.php:141 inc/customizer.php:176
+#: inc/customizer.php:193
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:82
 msgid "Your selection will be applied to page content and the main navigation."
 msgstr ""
