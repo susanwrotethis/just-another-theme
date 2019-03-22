@@ -205,6 +205,11 @@ function swt_jat_styles()
 		wp_add_inline_style( 'swt-jat-style', '.color-section {-webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;}' );
 	}
+	
+	// Set H3 style.
+	if ( $h3 = swt_jat_set_h3_style() ) {
+		wp_add_inline_style( 'swt-jat-style', $h3 );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'swt_jat_styles', 5 );
 
@@ -229,7 +234,7 @@ function swt_jat_add_font_styles( $mce )
     $styles = get_option( 'swt-jat-css', '' );
     
     // Append the button style here; 
-    $styles .= '.gobutton,.gobutton:hover{border:1px solid rgba(0,0,0,.1);border-radius: 1px;color: #fff;display:inline-block;font-size:1rem;line-height:1;padding:7px 15px;text-decoration:none !important; -webkit-transition: all 1s;transition: all 1s;';
+    $styles .= '.gobutton,.gobutton:hover{border:1px solid rgba(0,0,0,.1);border-radius: 1px;color: #fff;display:inline-block;font-size:1rem;line-height:1;padding:9px 15px;text-decoration:none !important; -webkit-transition: all 1s;transition: all 1s;';
     
 	// Add background color if no skin
 	if ( 'none' == $skin = get_theme_mod( 'swt_jat_skin', 'none' ) ) {
@@ -237,6 +242,11 @@ function swt_jat_add_font_styles( $mce )
     } else {
     	$styles .= '}';
     }
+    
+    // Set H3 style
+    if ( $h3 = swt_jat_set_h3_style( true ) ) {
+		$styles .= $h3;
+	}
 	
     if ( isset( $mce['content_style'] ) ) {
         $mce['content_style'] .= ' '.$styles.' ';
@@ -246,3 +256,19 @@ function swt_jat_add_font_styles( $mce )
     return $mce;
 }
 add_filter( 'tiny_mce_before_init','swt_jat_add_font_styles' );
+
+// STYLE HELPER FUNCTIONS BEGIN HERE /////////////////////////////////////////////////////
+// Return H3 style for front end and TinyMCE.
+function swt_jat_set_h3_style( $escape = false )
+{
+	if ( '2605' == $h3 = get_theme_mod( 'swt_jat_h3', '2605' ) ) {
+		return '';
+	} elseif ( 'none' == $h3 ) {
+		return "h3:before {content:'';padding-right:0;}";
+	} else {
+		if ( $escape ) {
+			return sprintf( 'h3:before {content:\'\%s\';}', $h3 );
+		}
+		return sprintf( 'h3:before {content:\'%s\';}', $h3 );
+	} 
+}

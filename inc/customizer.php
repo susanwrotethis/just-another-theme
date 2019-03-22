@@ -46,6 +46,9 @@ function swt_jat_customize_register( $wp_customize )
 	) );
 	
 	// Add controls for skins.
+	$skins = array( 'none' => __( 'Default (Black and White)', 'swt-jat' ) ); // default
+	$skins = array_merge ( $skins, swt_jat_get_skins() );
+		
 	$wp_customize->add_setting( 'swt_jat_skin', array(
 		'default'			=> '',
 		'transport'         => 'refresh',
@@ -56,8 +59,9 @@ function swt_jat_customize_register( $wp_customize )
 		'description' => esc_html__( 'Pick a color scheme to start your design.', 'swt-jat' ),
 		'section'	  => 'swt_jat_design',
 		'type'		  => 'select',
-		'choices'	  => swt_jat_get_skins(),
+		'choices'	  => $skins,
 	) );
+	$skins = null;
 	
 	// Body fonts: get list of availble fonts.
 	$body_fonts = swt_jat_get_body_fonts();
@@ -137,6 +141,24 @@ function swt_jat_customize_register( $wp_customize )
 			'1'		=> esc_html__( 'Yes', 'swt-jat' ),
 		),
 	) );
+	
+	// Set H3 styling.
+	$h3_choices = array( '\2605' => __( 'Star', 'swt-jat' ) ); // default
+	$h3_choices = array_merge( $h3_choices, swt_jat_get_h3_styles() );
+	
+	$wp_customize->add_setting( 'swt_jat_h3', array(
+		'default'			=> '\2605',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'swt_jat_h3', array(
+		'label'		  => esc_html__( 'Set H3 Style', 'swt-jat' ),
+		'description' => esc_html__( 'Select an accent or choose None.', 'swt-jat' ),
+		'section'	  => 'swt_jat_design',
+		'type'		  => 'select',
+		'choices'	  => $h3_choices,
+	) );
+	$h3_choices = null;
 	
 	// Set main navigation menu width.
 	$wp_customize->add_setting( 'swt_jat_nav', array(
@@ -393,7 +415,6 @@ function swt_jat_find_font( $fonts, $key )
 function swt_jat_get_skins()
 {
 	return array(
-		'none'				=> __( 'Default (Black and White)', 'swt-jat' ),
 		'amethyst'			=> __( 'Amethyst', 'swt-jat' ),
 		'blue'				=> __( 'Blue', 'swt-jat' ),
 		'burnt-orange'		=> __( 'Burnt Orange', 'swt-jat' ),
@@ -408,6 +429,18 @@ function swt_jat_get_skins()
 		'plum'				=> __( 'Plum', 'swt-jat' ),
 		'teal'				=> __( 'Teal', 'swt-jat' ),
 	);
+}
+
+// Return array of H3 styles
+function swt_jat_get_h3_styles()
+{
+	return apply_filters( 'swt-jat-h3-styles', array(
+		'\2665'	=> __( 'Heart', 'swt-jat' ),
+		'\2756'	=> __( 'Diamond', 'swt-jat' ),
+		'\25fe'	=> __( 'Square', 'swt-jat' ),
+		'\2724'	=> __( 'Flower', 'swt-jat' ),
+		'none'	=> __( 'None', 'swt-jat' ),
+	) );
 }
 
 // Return array of theme templates; translate on output, not here.
