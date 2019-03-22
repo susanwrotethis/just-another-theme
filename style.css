@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/susanwrotethis/just-another-theme
 Author: Susan Walker
 Author URI: https://susanwrotethis.com
 Description: Just Another Theme is a simple theme good for small business, organizational and personal sites. It is optimized for the DIY site owner with limited design experience. Made from Underscores.
-Version: 1.5.4
+Version: 1.5.5
 License: GPL v2 or later
 Text Domain: swt-jat
 Domain Path: /lang/
@@ -299,6 +299,8 @@ a:active {
 .post-navigation a:visited,
 .posts-navigation a,
 .posts-navigation a:visited,
+.comment-navigation a,
+.comment-navigation a:visited,
 .reply a,
 .reply a:visited {
 	background-color: #464646;
@@ -308,7 +310,7 @@ a:active {
 	display: inline-block;
 	font-size: 1rem;
 	line-height: 1;
-	padding: 7px 15px;
+	padding: 9px 15px;
 	text-decoration: none !important;
 	-webkit-transition: all 1s;
 	transition: all 1s;}
@@ -322,10 +324,14 @@ a:active {
 .page-links a,
 .page-links > span {
 	line-height: 1em; padding: 5px 8px 3px 8px;}
-
-.post-navigation a,
-.posts-navigation a {
-	font-size: .82em; padding: 6px 12px;}
+	
+	
+	
+.posts-navigation .nav-previous a:focus:before,
+.posts-navigation .nav-previous a:active:before,
+.posts-navigation .nav-next a:focus:after,
+.posts-navigation .nav-next a:active:after {
+	color: #333;}
 
 /* FORM ELEMENT STYLES BEGIN HERE ************************************/
 button,
@@ -337,7 +343,7 @@ input[type="submit"] {
 	border-radius: 1px;
 	color: #fff;
 	display: inline-block;
-	padding: 7px 15px;
+	padding: 9px 15px;
 	-webkit-transition: all 1s;
 	transition: all 1s;}
 
@@ -345,6 +351,7 @@ input[type="submit"] {
 .page-links a:hover,
 .post-navigation a:hover,
 .posts-navigation a:hover,
+.comment-navigation a:hover,
 .reply a:hover,
 button:hover,
 input[type="button"]:hover,
@@ -361,6 +368,8 @@ input[type="submit"]:hover {
 .post-navigation a:active,
 .posts-navigation a:focus,
 .posts-navigation a:active,
+.comment-navigation a:focus,
+.comment-navigation a:active,
 .reply a:focus,
 .reply a:active,
 button:active, 
@@ -544,7 +553,7 @@ textarea {
 		width: 200px;}
 }
 
-/* Comment navigation */
+/* Navigation */
 .site-main .comment-navigation, 
 .site-main .posts-navigation, 
 .site-main .post-navigation {
@@ -623,8 +632,6 @@ textarea {
 .comment-content:after,
 .site-header:before,
 .site-header:after,
-.site-content:before,
-.site-content:after,
 .site-footer:before,
 .site-footer:after,
 .main-navigation:after,
@@ -639,7 +646,6 @@ textarea {
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
-.site-content:after,
 .site-footer:after,
 .main-navigation:after,
 .main-navigation-content:after,
@@ -1192,7 +1198,7 @@ object {
 	border: 2px dotted #ccc; border-width: 2px 0; margin-bottom: 15px; padding: 15px 0;}
 
 .single .entry-footer {
-	border-bottom: 1px dotted #ccc; margin-top: 1rem; padding-bottom: 1.5rem;}
+	 margin-top: 1rem;}
 
 .single .post-thumbnail {
 	margin: 25px auto; max-width: 90%; text-align: center; width: 90%;}
@@ -1228,12 +1234,17 @@ ol.comment-list {
 
 .comment-author img {
 	float: left; margin: 4px .75em 0 0;}
+	
+.reply {
+	margin-bottom: 21px;}
 
 .reply a {
-	font-size: .82rem; padding: 4px 15px;}
-
-.comment-form input[type="submit"] {
-	font-size: .82rem;}
+	line-height: 1; padding: 9px 15px;}
+	
+.comment-reply-title small {
+	font-size: 1rem;
+	text-transform: capitalize;
+}
 	
 /* DARK COLOR STYLES BEGIN HERE **************************************/
 body.wp-template {
