@@ -143,3 +143,14 @@ Fixes Github URI data in style.css.
 
 * Adjusted line heights of form fields and button links.
 * Updated the toggle button images.
+
+### 1.5.5
+
+* Adjust remaining button styles.
+* Add styling for comments navigation.
+* Adjust wording for posts navigation.
+* Add wrapper to templates to allow for flexbox styling of primary sidebar if preferred.
+* Remove footer bottom border from single posts.
+* Add H3 styling options to customizer, inline styles and TinyMCE styles.
+* Update customizer code to prevent H3 and skin defaults from being removed by applying filters.
+* Update the translation template.
