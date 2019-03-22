@@ -28,6 +28,8 @@ a:active {
 .post-navigation a:visited,
 .posts-navigation a,
 .posts-navigation a:visited,
+.comment-navigation a,
+.comment-navigation a:visited,
 .reply a,
 .reply a:visited, 
 button,
@@ -49,6 +51,9 @@ input[type="submit"] {
 .posts-navigation a:hover,
 .posts-navigation a:focus,
 .posts-navigation a:active,
+.comment-navigation a:hover,
+.comment-navigation a:focus,
+.comment-navigation a:active,
 .reply a:hover,
 .reply a:focus,
 .reply a:active,
@@ -123,8 +128,7 @@ hr {
 .blog article:first-of-type,
 .archive article:first-of-type,
 .search-results article:first-of-type,
-.single .entry-meta,
-.single .entry-footer {
+.single .entry-meta {
 	border-color: #ccc5be;
 }
 
