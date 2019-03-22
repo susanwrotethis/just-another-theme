@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-
+<div id="content-block" class="content-block">
 	<section id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
 			<?php do_action( 'swt-jat-before-main', 'index' ); ?>
@@ -34,7 +34,9 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation( array( 
+				'prev_text' => esc_html__( 'Preceding Posts', 'swt-jat' ), 
+				'next_text' => esc_html__( 'Following Posts', 'swt-jat' ) ) );
 
 		else :
 
@@ -52,8 +54,10 @@ get_header();
 		get_sidebar( 'primary' ); 
 
 	endif; ?>
+</div><!-- .content-block -->
 
-	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
-		<?php do_action( 'swt-jat-pre-footer', 'index' ); ?>
+<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		
+<?php do_action( 'swt-jat-pre-footer', 'index' ); ?>
 
 <?php get_footer();

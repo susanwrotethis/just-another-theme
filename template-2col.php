@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-
+<div id="content-block" class="content-block">
 	<div id="primary" class="content-area content-area-cols">
 		<main id="main" class="site-main">
 			<?php do_action( 'swt-jat-before-main', 'widepage' ); ?>
@@ -31,8 +31,10 @@ get_header();
 	</div><!-- #primary .content-area -->
 
 	<?php get_sidebar( 'primary' ); ?>
+</div><!-- .content-block -->
 
-	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
-		<?php do_action( 'swt-jat-pre-footer', 'widepage' ); ?>
+<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		
+<?php do_action( 'swt-jat-pre-footer', 'widepage' ); ?>
 
 <?php get_footer();

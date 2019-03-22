@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-
+<div id="content-block" class="content-block">
 	<div id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
 			<?php do_action( 'swt-jat-before-main', '404' ); ?>
@@ -43,8 +43,10 @@ get_header();
 		get_sidebar( 'primary' ); 
 
 	endif; ?>
+</div><!-- .content-block -->
 
-	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
-		<?php do_action( 'swt-jat-pre-footer', '404' ); ?>
+<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+		
+<?php do_action( 'swt-jat-pre-footer', '404' ); ?>
 
 <?php get_footer();

@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-
+<div id="content-block" class="content-block">
 	<div id="primary" class="content-area content-area-default">
 		<main id="main" class="site-main">
 			<?php do_action( 'swt-jat-before-main', 'single' ); ?>
@@ -18,7 +18,9 @@ get_header();
 
 			get_template_part( 'template-parts/content-single', 'single-'.get_post_type() );
 
-			the_post_navigation();
+			the_post_navigation( array(
+				'prev_text' => esc_html__( 'Preceding Post', 'swt-jat' ),
+				'next_text' => esc_html__( 'Following Post', 'swt-jat' ) ) );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -37,8 +39,10 @@ get_header();
 		get_sidebar( 'primary' ); 
 
 	endif; ?>
+</div><!-- .content-block -->
 
-	<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
-		<?php do_action( 'swt-jat-pre-footer', 'single' ); ?>
+<div class="bottom-content"><?php get_sidebar( 'bottom' ); ?></div>
+
+<?php do_action( 'swt-jat-pre-footer', 'single' ); ?>
 
 <?php get_footer();
